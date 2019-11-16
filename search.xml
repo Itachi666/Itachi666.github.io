@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Leetcode Weekly Contest 162</title>
+    <url>/2019/11/16/Leetcode-Weekly-Contest-162/</url>
+    <content><![CDATA[<h1 id="Weekly-Contest-162"><a href="#Weekly-Contest-162" class="headerlink" title="Weekly Contest 162"></a>Weekly Contest 162</h1><p>一个罚时没进200，有点难过。这次题目说实话都直接的。。</p>
+<a id="more"></a>
+
+
+<h3 id="1252-Cells-with-Odd-Values-in-a-Matrix"><a href="#1252-Cells-with-Odd-Values-in-a-Matrix" class="headerlink" title="1252. Cells with Odd Values in a Matrix"></a>1252. Cells with Odd Values in a Matrix</h3><p><a href="https://leetcode.com/contest/weekly-contest-162/problems/cells-with-odd-values-in-a-matrix/" target="_blank" rel="noopener">题目</a> </p>
+<p>提交次数：1/1</p>
+<p>日常签到题，数据量比较小模拟就行了</p>
+<p>不过也可以只统计行和列的计数情况，分别统计被增加偶数次和奇数次的行，以及被增加偶数次和奇数次的列，那么对应的 偶数行∗奇数列 和 奇数行∗偶数列 都可以被统计入结果，时间复杂度降为 $O(n)$</p>
+<h3 id="1253-Reconstruct-a-2-Row-Binary-Matrix"><a href="#1253-Reconstruct-a-2-Row-Binary-Matrix" class="headerlink" title="1253. Reconstruct a 2-Row Binary Matrix"></a>1253. Reconstruct a 2-Row Binary Matrix</h3><p><a href="https://leetcode.com/contest/weekly-contest-162/problems/reconstruct-a-2-row-binary-matrix/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/2</p>
+<p>交的时候不太确定，不过用贪心足够了。对0和2来说不用考虑什么，1的时候选多的那个减一就可以了。</p>
+<p>不过最后没看见每一行数目必须正好对上upper和lower才行。。。</p>
+<h3 id="1254-Number-of-Closed-Islands"><a href="#1254-Number-of-Closed-Islands" class="headerlink" title="1254. Number of Closed Islands"></a>1254. Number of Closed Islands</h3><p><a href="https://leetcode.com/contest/weekly-contest-162/problems/number-of-closed-islands/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>标准搜索题。直接bfs就行了。</p>
+<h3 id="1255-Maximum-Score-Words-Formed-by-Letters"><a href="#1255-Maximum-Score-Words-Formed-by-Letters" class="headerlink" title="1255. Maximum Score Words Formed by Letters"></a>1255. Maximum Score Words Formed by Letters</h3><p><a href="https://leetcode.com/contest/weekly-contest-162/problems/maximum-score-words-formed-by-letters/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>dfs搜就行了。。。</p>
+<p>数据量不大，考虑了几个优化点不知道用上了没有。</p>
+]]></content>
+      <categories>
+        <category>算法题</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2019/11/15/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+ <a id="more"></a> 
+
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+</search>
