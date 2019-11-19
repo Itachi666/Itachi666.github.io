@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":15,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="发现做完今年的H轮之后Kickstart的时间表就更新成明年的了。。虽然H轮做的一坨屎但还是要回顾一下的。看了看网址都还在也能回去练习，只是没有索引了，就干脆整理一下方便回顾。">
+<meta name="keywords" content="Algorithm,Kickstart,Google">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谷歌KickStart题目索引整理">
+<meta property="og:url" content="https:&#x2F;&#x2F;itachi666.github.io&#x2F;2019&#x2F;11&#x2F;19&#x2F;%E8%B0%B7%E6%AD%8CKickstart%E9%A2%98%E7%9B%AE%E7%B4%A2%E5%BC%95%E6%95%B4%E7%90%86&#x2F;index.html">
+<meta property="og:site_name" content="永不消失的幻想乡">
+<meta property="og:description" content="发现做完今年的H轮之后Kickstart的时间表就更新成明年的了。。虽然H轮做的一坨屎但还是要回顾一下的。看了看网址都还在也能回去练习，只是没有索引了，就干脆整理一下方便回顾。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-19T06:27:10.184Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://itachi666.github.io/2019/11/19/%E8%B0%B7%E6%AD%8CKickstart%E9%A2%98%E7%9B%AE%E7%B4%A2%E5%BC%95%E6%95%B4%E7%90%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>谷歌KickStart题目索引整理 | 永不消失的幻想乡</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">永不消失的幻想乡</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Papyrus's Blog</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://itachi666.github.io/2019/11/19/%E8%B0%B7%E6%AD%8CKickstart%E9%A2%98%E7%9B%AE%E7%B4%A2%E5%BC%95%E6%95%B4%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Papyrus">
+      <meta itemprop="description" content="Let's show them who we are.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永不消失的幻想乡">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          谷歌KickStart题目索引整理
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-11-19 14:13:20 / 修改时间：14:27:10" itemprop="dateCreated datePublished" datetime="2019-11-19T14:13:20+08:00">2019-11-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algroithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algroithm</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/11/19/%E8%B0%B7%E6%AD%8CKickstart%E9%A2%98%E7%9B%AE%E7%B4%A2%E5%BC%95%E6%95%B4%E7%90%86/" class="post-meta-item leancloud_visitors" data-flag-title="谷歌KickStart题目索引整理" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>发现做完今年的H轮之后Kickstart的时间表就更新成明年的了。。虽然H轮做的一坨屎但还是要回顾一下的。看了看网址都还在也能回去练习，只是没有索引了，就干脆整理一下方便回顾。</p>
+<a id="more"></a>
+
+<p>前期整理来自于<a href="https://github.com/amylmy/KickStart-GoogleCompetition" target="_blank" rel="noopener">amylmy</a></p>
+<p>蠢了谷歌还是有整合的：<a href="https://codingcompetitions.withgoogle.com/kickstart/archive/2019" target="_blank" rel="noopener">Kickstart 2019</a>，但试了试18年之前的好像不太行。</p>
+<h3 id="2019"><a href="#2019" class="headerlink" title="2019"></a>2019</h3><h4 id="Round-H"><a href="#Round-H" class="headerlink" title="Round H"></a><a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000050edd" target="_blank" rel="noopener">Round H</a></h4><ul>
+<li>H-index</li>
+<li>Diagonal Puzzle</li>
+<li>Elevanagram</li>
+</ul>
+<h4 id="Round-G"><a href="#Round-G" class="headerlink" title="Round G"></a><a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000051066" target="_blank" rel="noopener">Round G</a></h4><ul>
+<li>Product Triplets </li>
+<li>Combining Classes</li>
+<li>Cave Escape</li>
+</ul>
+<h4 id="Round-F"><a href="#Round-F" class="headerlink" title="Round F"></a><a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000050edc" target="_blank" rel="noopener">Round F</a></h4><ul>
+<li>Flattening</li>
+<li>Teach Me</li>
+<li>Spectating Villages</li>
+</ul>
+<h4 id="Round-E"><a href="#Round-E" class="headerlink" title="Round E"></a><a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000050edb" target="_blank" rel="noopener">Round E</a></h4><ul>
+<li>Cherries Mesh </li>
+<li>Code-Eat Switcher </li>
+<li>Street Checkers </li>
+</ul>
+<h4 id="Round-D"><a href="#Round-D" class="headerlink" title="Round D"></a><a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000051061" target="_blank" rel="noopener">Round D</a></h4><ul>
+<li>X or What?</li>
+<li>Latest Guests</li>
+<li>Food Stalls</li>
+</ul>
+<h4 id="Round-C"><a href="#Round-C" class="headerlink" title="Round C"></a><a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000050ff2" target="_blank" rel="noopener">Round C</a></h4><ul>
+<li>Wiggle Walk</li>
+<li>Circuit Board</li>
+<li>Catch Some</li>
+</ul>
+<h4 id="Round-B"><a href="#Round-B" class="headerlink" title="Round B"></a><a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000050eda" target="_blank" rel="noopener">Round B</a></h4><ul>
+<li>Building Palindromes</li>
+<li>Energy Stones</li>
+<li>Diverse Subarray</li>
+</ul>
+<h4 id="Round-A"><a href="#Round-A" class="headerlink" title="Round A"></a><a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000050e01" target="_blank" rel="noopener">Round A</a></h4><ul>
+<li>Training</li>
+<li>Parcels</li>
+<li>Contention</li>
+</ul>
+<h4 id="Practice-Round"><a href="#Practice-Round" class="headerlink" title="Practice Round"></a><a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000051060" target="_blank" rel="noopener">Practice Round</a></h4><ul>
+<li>Guessing Number (平台热身)</li>
+<li>Mural （同2018-H轮-B题）</li>
+<li>Kickstart Alarm （同2018-C轮-C题）</li>
+</ul>
+<h3 id="2018"><a href="#2018" class="headerlink" title="2018"></a>2018</h3><h4 id="Practice-Round-1"><a href="#Practice-Round-1" class="headerlink" title="Practice Round"></a><a href="https://code.google.com/codejam/contest/4374486/dashboard" target="_blank" rel="noopener">Practice Round</a></h4><ul>
+<li>Problem A. GBus count</li>
+<li>Problem B. Googol String</li>
+<li>Problem C. Sort a scrambled itinerary</li>
+<li>Problem D. Sums of Sums</li>
+</ul>
+<h4 id="Round-A-1"><a href="#Round-A-1" class="headerlink" title="Round A"></a><a href="https://code.google.com/codejam/contest/9234486/dashboard" target="_blank" rel="noopener">Round A</a></h4><ul>
+<li>Problem A. Even Digits</li>
+<li>Problem B. Lucky Dip</li>
+<li>Problem C. Scrambled Words</li>
+</ul>
+<h4 id="Round-B-1"><a href="#Round-B-1" class="headerlink" title="Round B"></a><a href="https://code.google.com/codejam/contest/10284486/dashboard" target="_blank" rel="noopener">Round B</a></h4><ul>
+<li>Problem A. No Nine</li>
+<li>Problem B. Sherlock and the Bit Strings</li>
+<li>Problem C. King’s Circle</li>
+</ul>
+<h4 id="Round-C-1"><a href="#Round-C-1" class="headerlink" title="Round C"></a><a href="https://code.google.com/codejam/contest/4384486/dashboard" target="_blank" rel="noopener">Round C</a></h4><ul>
+<li>Problem A. Planet Distance</li>
+<li>Problem B. Fairies and Witches</li>
+<li>Problem C. Kickstart Alarm</li>
+</ul>
+<h4 id="Round-D-1"><a href="#Round-D-1" class="headerlink" title="Round D"></a><a href="https://code.google.com/codejam/contest/6364486/dashboard" target="_blank" rel="noopener">Round D</a></h4><ul>
+<li>Problem A. Candies</li>
+<li>Problem B. Paragliding</li>
+<li>Problem C. Funniest Word Search</li>
+</ul>
+<h4 id="Round-E-1"><a href="#Round-E-1" class="headerlink" title="Round E"></a><a href="https://code.google.com/codejam/contest/4394486/dashboard" target="_blank" rel="noopener">Round E</a></h4><ul>
+<li>Problem A. Yogurt</li>
+<li>Problem B. Milk Tea</li>
+<li>Problem C. Board Game</li>
+</ul>
+<h4 id="Round-F-1"><a href="#Round-F-1" class="headerlink" title="Round F"></a><a href="https://code.google.com/codejam/contest/3314486/dashboard" target="_blank" rel="noopener">Round F</a></h4><ul>
+<li>Problem A. Common Anagrams</li>
+<li>Problem B. Specializing Villages</li>
+<li>Problem C. Palindromic Sequence</li>
+</ul>
+<h4 id="Round-G-1"><a href="#Round-G-1" class="headerlink" title="Round G"></a><a href="https://code.google.com/codejam/contest/5374486/dashboard" target="_blank" rel="noopener">Round G</a></h4><ul>
+<li>Problem A. Product Triplets</li>
+<li>Problem B. Combining Classes</li>
+<li>Problem C. Cave Escape</li>
+</ul>
+<h4 id="Round-H-1"><a href="#Round-H-1" class="headerlink" title="Round H"></a><a href="https://codejam.withgoogle.com/codejam/contest/3324486/dashboard" target="_blank" rel="noopener">Round H</a></h4><ul>
+<li>Problem A. Big Buttons</li>
+<li>Problem B. Mural</li>
+<li>Problem C. Let Me Count The Ways</li>
+</ul>
+<h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><h4 id="Practice-Round-2"><a href="#Practice-Round-2" class="headerlink" title="Practice Round"></a><a href="https://code.google.com/codejam/contest/6304486/dashboard" target="_blank" rel="noopener">Practice Round</a></h4><ul>
+<li>Problem A. Country Leader</li>
+<li>Problem B. Vote</li>
+<li>Problem C. Sherlock and Parentheses</li>
+</ul>
+<h4 id="Round-A-2"><a href="#Round-A-2" class="headerlink" title="Round A"></a><a href="https://code.google.com/codejam/contest/8284486/dashboard" target="_blank" rel="noopener">Round A</a></h4><ul>
+<li>Problem A. Square Counting</li>
+<li>Problem B. Patterns Overlap</li>
+<li>Problem C. Space Cubes</li>
+</ul>
+<h4 id="Round-B-2"><a href="#Round-B-2" class="headerlink" title="Round B"></a><a href="https://code.google.com/codejam/contest/11304486/dashboard" target="_blank" rel="noopener">Round B</a></h4><ul>
+<li>Problem A. Math Encoder</li>
+<li>Problem B. Center</li>
+<li>Problem C. Christmas Tree</li>
+</ul>
+<h4 id="Practice-Round-2"><a href="#Practice-Round-2" class="headerlink" title="Practice Round 2"></a><a href="https://code.google.com/codejam/contest/12254486/dashboard" target="_blank" rel="noopener">Practice Round 2</a></h4><ul>
+<li>Problem A. Diwali lightings</li>
+<li>Problem B. Safe Squares</li>
+<li>Problem C. Beautiful Numbers</li>
+<li>Problem D. Watson and Intervals</li>
+</ul>
+<h4 id="Round-C-2"><a href="#Round-C-2" class="headerlink" title="Round C"></a><a href="https://code.google.com/codejam/contest/4344486/dashboard" target="_blank" rel="noopener">Round C</a></h4><ul>
+<li>Problem A. Ambiguous Cipher</li>
+<li>Problem B. X Squared</li>
+<li>Problem C. Magical Thinking</li>
+<li>Problem D. The 4M Corporation</li>
+</ul>
+<h4 id="Round-D-2"><a href="#Round-D-2" class="headerlink" title="Round D"></a><a href="https://code.google.com/codejam/contest/8284487/dashboard" target="_blank" rel="noopener">Round D</a></h4><ul>
+<li>Problem A. Go Sightseeing</li>
+<li>Problem B. Sherlock and The Matrix Game</li>
+<li>Problem C. Trash Throwing</li>
+</ul>
+<h4 id="Round-E-2"><a href="#Round-E-2" class="headerlink" title="Round E"></a><a href="https://code.google.com/codejam/contest/12234486/dashboard" target="_blank" rel="noopener">Round E</a></h4><ul>
+<li>Problem A. Copy &amp; Paste</li>
+<li>Problem B. Trapezoid Counting</li>
+<li>Problem C. Blackhole</li>
+</ul>
+<h4 id="Round-F-2"><a href="#Round-F-2" class="headerlink" title="Round F"></a><a href="https://code.google.com/codejam/contest/7254486/dashboard" target="_blank" rel="noopener">Round F</a></h4><ul>
+<li>Problem A. Kicksort</li>
+<li>Problem B. Dance Battle</li>
+<li>Problem C. Catch Them All</li>
+<li>Problem D. Eat Cake</li>
+</ul>
+<h4 id="Round-G-2"><a href="#Round-G-2" class="headerlink" title="Round G"></a><a href="https://code.google.com/codejam/contest/3254486/dashboard" target="_blank" rel="noopener">Round G</a></h4><ul>
+<li>Problem A. Huge Numbers</li>
+<li>Problem B. Cards Game</li>
+<li>Problem C. Matrix Cutting</li>
+</ul>
+<h3 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h3><h4 id="Practice-Round-3"><a href="#Practice-Round-3" class="headerlink" title="Practice Round"></a><a href="https://code.google.com/codejam/contest/5254486/dashboard" target="_blank" rel="noopener">Practice Round</a></h4><ul>
+<li>Problem A. Lazy Spelling Bee</li>
+<li>Problem B. Robot Rock Band</li>
+<li>Problem C. Not So Random</li>
+<li>Problem D. Sums of Sums</li>
+</ul>
+<h4 id="Round-A-3"><a href="#Round-A-3" class="headerlink" title="Round A"></a><a href="https://code.google.com/codejam/contest/11274486/dashboard" target="_blank" rel="noopener">Round A</a></h4><ul>
+<li>Problem A. Country Leader</li>
+<li>Problem B. Rain</li>
+<li>Problem C. Jane’s Flower Shop</li>
+<li>Problem D. Clash Royale</li>
+</ul>
+<h4 id="Round-B-3"><a href="#Round-B-3" class="headerlink" title="Round B"></a><a href="https://code.google.com/codejam/contest/5254487/dashboard" target="_blank" rel="noopener">Round B</a></h4><ul>
+<li>Problem A. Sherlock and Parentheses</li>
+<li>Problem B. Sherlock and Watson Gym Secrets</li>
+<li>Problem C. Watson and Intervals</li>
+<li>Problem D. Sherlock and Permutation Sorting</li>
+</ul>
+<h4 id="Round-C-3"><a href="#Round-C-3" class="headerlink" title="Round C"></a><a href="https://code.google.com/codejam/contest/6274486/dashboard" target="_blank" rel="noopener">Round C</a></h4><ul>
+<li>Problem A. Monster Path</li>
+<li>Problem B. Safe Squares</li>
+<li>Problem C. Evaluation</li>
+<li>Problem D. Soldiers</li>
+</ul>
+<h4 id="Round-D-3"><a href="#Round-D-3" class="headerlink" title="Round D"></a><a href="https://code.google.com/codejam/contest/5264486/dashboard" target="_blank" rel="noopener">Round D</a></h4><ul>
+<li>Problem A. Vote</li>
+<li>Problem B. Sitting</li>
+<li>Problem C. Codejamon Cipher</li>
+<li>Problem D. Stretch Rope</li>
+</ul>
+<h4 id="Round-E-3"><a href="#Round-E-3" class="headerlink" title="Round E"></a><a href="https://code.google.com/codejam/contest/5264487/dashboard" target="_blank" rel="noopener">Round E</a></h4><ul>
+<li>Problem A. Diwali lightings</li>
+<li>Problem B. Beautiful Numbers</li>
+<li>Problem C. Partioning Number</li>
+<li>Problem D. Sorting Array</li>
+</ul>
+<h3 id="2015"><a href="#2015" class="headerlink" title="2015"></a>2015</h3><h4 id="Practice-Round-4"><a href="#Practice-Round-4" class="headerlink" title="Practice Round"></a><a href="https://code.google.com/codejam/contest/6234486/dashboard" target="_blank" rel="noopener">Practice Round</a></h4><ul>
+<li>Problem A. Bad Horse</li>
+<li>Problem B. Captain Hammer</li>
+<li>Problem C. Moist</li>
+</ul>
+<h4 id="Round-A-4"><a href="#Round-A-4" class="headerlink" title="Round A"></a><a href="https://code.google.com/codejam/contest/4284486/dashboard" target="_blank" rel="noopener">Round A</a></h4><ul>
+<li>Problem A. Googol String</li>
+<li>Problem B. gCube</li>
+<li>Problem C. gCampus</li>
+<li>Problem D. gSnake</li>
+</ul>
+<h4 id="Round-B-4"><a href="#Round-B-4" class="headerlink" title="Round B"></a><a href="https://code.google.com/codejam/contest/10214486/dashboard" target="_blank" rel="noopener">Round B</a></h4><ul>
+<li>Problem A. Travel</li>
+<li>Problem B. gWheels</li>
+<li>Problem C. gNumbers</li>
+<li>Problem D. Albocede DNA</li>
+</ul>
+<h4 id="Round-C-4"><a href="#Round-C-4" class="headerlink" title="Round C"></a><a href="https://code.google.com/codejam/contest/4284487/dashboard" target="_blank" rel="noopener">Round C</a></h4><ul>
+<li>Problem A. gRanks</li>
+<li>Problem B. gFiles</li>
+<li>Problem C. gGames</li>
+<li>Problem D. gMatrix</li>
+</ul>
+<h4 id="Round-D-4"><a href="#Round-D-4" class="headerlink" title="Round D"></a><a href="https://code.google.com/codejam/contest/11214486/dashboard" target="_blank" rel="noopener">Round D</a></h4><ul>
+<li>Problem A. Dynamic Grid</li>
+<li>Problem B. gBalloon</li>
+<li>Problem C. IP Address Summarization</li>
+<li>Problem D. Virtual Rabbit</li>
+</ul>
+<h4 id="Round-E-4"><a href="#Round-E-4" class="headerlink" title="Round E"></a><a href="https://code.google.com/codejam/contest/8264486/dashboard" target="_blank" rel="noopener">Round E</a></h4><ul>
+<li>Problem A. Lazy Spelling Bee</li>
+<li>Problem B. Robot Rock Band</li>
+<li>Problem C. Not So Random</li>
+<li>Problem D. Sums of Sums</li>
+</ul>
+<h3 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h3><h4 id="Round-A-5"><a href="#Round-A-5" class="headerlink" title="Round A"></a><a href="https://code.google.com/codejam/contest/3214486/dashboard" target="_blank" rel="noopener">Round A</a></h4><ul>
+<li>Problem A. Seven-segment Display</li>
+<li>Problem B. Super 2048</li>
+<li>Problem C. Addition</li>
+<li>Problem D. Cut Tiles</li>
+</ul>
+<h4 id="Round-B-5"><a href="#Round-B-5" class="headerlink" title="Round B"></a><a href="https://code.google.com/codejam/contest/4214486/dashboard" target="_blank" rel="noopener">Round B</a></h4><ul>
+<li>Problem A. Password Attacker</li>
+<li>Problem B. New Years Eve</li>
+<li>Problem C. Card Game</li>
+<li>Problem D. Parentheses Order</li>
+</ul>
+<h4 id="Round-C-5"><a href="#Round-C-5" class="headerlink" title="Round C"></a><a href="https://code.google.com/codejam/contest/5214486/dashboard" target="_blank" rel="noopener">Round C</a></h4><ul>
+<li>Problem A. Minesweeper</li>
+<li>Problem B. Taking Metro</li>
+<li>Problem C. Broken Calculator</li>
+<li>Problem D. Tetris</li>
+</ul>
+<h4 id="Round-D-5"><a href="#Round-D-5" class="headerlink" title="Round D"></a><a href="https://code.google.com/codejam/contest/6214486/dashboard" target="_blank" rel="noopener">Round D</a></h4><ul>
+<li>Problem A. Cube IV</li>
+<li>Problem B. GBus count</li>
+<li>Problem C. Sort a scrambled itinerary</li>
+<li>Problem D. Itz Chess</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+              <a href="/tags/Kickstart/" rel="tag"># Kickstart</a>
+              <a href="/tags/Google/" rel="tag"># Google</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/16/Leetcode-Weekly-Contest-162/" rel="next" title="Leetcode Weekly Contest 162">
+                  <i class="fa fa-chevron-left"></i> Leetcode Weekly Contest 162
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2019"><span class="nav-number">1.</span> <span class="nav-text">2019</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-H"><span class="nav-number">1.1.</span> <span class="nav-text">Round H</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-G"><span class="nav-number">1.2.</span> <span class="nav-text">Round G</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-F"><span class="nav-number">1.3.</span> <span class="nav-text">Round F</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-E"><span class="nav-number">1.4.</span> <span class="nav-text">Round E</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-D"><span class="nav-number">1.5.</span> <span class="nav-text">Round D</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-C"><span class="nav-number">1.6.</span> <span class="nav-text">Round C</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-B"><span class="nav-number">1.7.</span> <span class="nav-text">Round B</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-A"><span class="nav-number">1.8.</span> <span class="nav-text">Round A</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Practice-Round"><span class="nav-number">1.9.</span> <span class="nav-text">Practice Round</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018"><span class="nav-number">2.</span> <span class="nav-text">2018</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Practice-Round-1"><span class="nav-number">2.1.</span> <span class="nav-text">Practice Round</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-A-1"><span class="nav-number">2.2.</span> <span class="nav-text">Round A</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-B-1"><span class="nav-number">2.3.</span> <span class="nav-text">Round B</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-C-1"><span class="nav-number">2.4.</span> <span class="nav-text">Round C</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-D-1"><span class="nav-number">2.5.</span> <span class="nav-text">Round D</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-E-1"><span class="nav-number">2.6.</span> <span class="nav-text">Round E</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-F-1"><span class="nav-number">2.7.</span> <span class="nav-text">Round F</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-G-1"><span class="nav-number">2.8.</span> <span class="nav-text">Round G</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-H-1"><span class="nav-number">2.9.</span> <span class="nav-text">Round H</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2017"><span class="nav-number">3.</span> <span class="nav-text">2017</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Practice-Round-2"><span class="nav-number">3.1.</span> <span class="nav-text">Practice Round</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-A-2"><span class="nav-number">3.2.</span> <span class="nav-text">Round A</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-B-2"><span class="nav-number">3.3.</span> <span class="nav-text">Round B</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Practice-Round-2"><span class="nav-number">3.4.</span> <span class="nav-text">Practice Round 2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-C-2"><span class="nav-number">3.5.</span> <span class="nav-text">Round C</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-D-2"><span class="nav-number">3.6.</span> <span class="nav-text">Round D</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-E-2"><span class="nav-number">3.7.</span> <span class="nav-text">Round E</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-F-2"><span class="nav-number">3.8.</span> <span class="nav-text">Round F</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-G-2"><span class="nav-number">3.9.</span> <span class="nav-text">Round G</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2016"><span class="nav-number">4.</span> <span class="nav-text">2016</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Practice-Round-3"><span class="nav-number">4.1.</span> <span class="nav-text">Practice Round</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-A-3"><span class="nav-number">4.2.</span> <span class="nav-text">Round A</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-B-3"><span class="nav-number">4.3.</span> <span class="nav-text">Round B</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-C-3"><span class="nav-number">4.4.</span> <span class="nav-text">Round C</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-D-3"><span class="nav-number">4.5.</span> <span class="nav-text">Round D</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-E-3"><span class="nav-number">4.6.</span> <span class="nav-text">Round E</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2015"><span class="nav-number">5.</span> <span class="nav-text">2015</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Practice-Round-4"><span class="nav-number">5.1.</span> <span class="nav-text">Practice Round</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-A-4"><span class="nav-number">5.2.</span> <span class="nav-text">Round A</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-B-4"><span class="nav-number">5.3.</span> <span class="nav-text">Round B</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-C-4"><span class="nav-number">5.4.</span> <span class="nav-text">Round C</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-D-4"><span class="nav-number">5.5.</span> <span class="nav-text">Round D</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-E-4"><span class="nav-number">5.6.</span> <span class="nav-text">Round E</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2014"><span class="nav-number">6.</span> <span class="nav-text">2014</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-A-5"><span class="nav-number">6.1.</span> <span class="nav-text">Round A</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-B-5"><span class="nav-number">6.2.</span> <span class="nav-text">Round B</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-C-5"><span class="nav-number">6.3.</span> <span class="nav-text">Round C</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Round-D-5"><span class="nav-number">6.4.</span> <span class="nav-text">Round D</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Papyrus"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Papyrus</p>
+  <div class="site-description" itemprop="description">Let's show them who we are.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Itachi666" title="GitHub" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>  
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mailto:papyrus1996@outlook.com" title="E-Mail" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>  
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/1818753" title="Bilibili" rel="noopener" target="_blank"><i class="fa fa-fw fa-bold"></i>Bilibili</a>  
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://psnine.com/psnid/name1shard" title="Psnine" rel="noopener" target="_blank"><i class="fa fa-fw fa-gamepad"></i>Psnine</a>  
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://steamcommunity.com/id/494521900/" title="Steam" rel="noopener" target="_blank"><i class="fa fa-fw fa-steam-square"></i>Steam</a>  
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Papyrus</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a>
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+<span id="busuanzi_container_site_pv">
+    <span class="post-meta-divider">|</span> Total visits <span id="busuanzi_value_site_pv"></span> times.
+</span>
+
+<span id="busuanzi_container_site_uv">
+    <span class="post-meta-divider">|</span> Total <span id="busuanzi_value_site_uv"></span> visitors.
+</span>
+
+        
+
+
+
+
+
+
+  <script>
+  function leancloudSelector(url) {
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = visitors.getAttribute('id').trim();
+      var title = visitors.getAttribute('data-flag-title').trim();
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+              leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .catch(error => {
+                console.log('Failed to save visitor count', error);
+              })
+          } else {
+              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.log('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return element.getAttribute('id').trim();
+      });
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length === 0) {
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
+            });
+            return;
+          }
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            leancloudSelector(url).innerText = time;
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = leancloudSelector(url);
+            if (element.innerText == '') {
+              element.innerText = 0;
+            }
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  }
+
+  fetch('https://app-router.leancloud.cn/2/route?appId=QHTTyN3UtoKdvQK7lf4K7CfH-gzGzoHsz')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method: method,
+          headers: {
+            'X-LC-Id': 'QHTTyN3UtoKdvQK7lf4K7CfH-gzGzoHsz',
+            'X-LC-Key': 'LCzO8VhxpBWsIlCfmqf9RHSg',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+        if (localhost.test(document.URL)) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+  <script defer src="/lib/three/three.min.js"></script>
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: 'ee246ed74d7882f6b8a9',
+      clientSecret: '257d1d0c0f6b492a038f06fd46529c56290a79c7',
+      repo: 'Itachi666.github.io',
+      owner: 'Itachi666',
+      admin: ['Itachi666'],
+      id: 'bfb093d60a2c3cefa1838560185f2981',
+        language: 'zh-CN',
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
+
+</body>
+</html>
