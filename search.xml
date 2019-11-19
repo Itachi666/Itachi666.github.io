@@ -1,6 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Leetcode Weekly Contest 163解题记录</title>
+    <url>/2019/11/19/Leetcode-Weekly-Contest-163%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>头天晚上睡得太晚硬是睡过了。。迟到了半小时开始做，结果只做出来了两道。但没想到排名直接掉了40+，这掉的也太多了。。事实证明刚爬起来就不要瞎搞什么动脑子的活动。</p>
+<a id="more"></a>
+
+<p><a href="https://github.com/Itachi666/AlgorithmWarehouse/tree/master/LeetcodeContest/WeeklyContest163" target="_blank" rel="noopener">代码在这里</a></p>
+<h3 id="1260-Shift-2D-Grid"><a href="#1260-Shift-2D-Grid" class="headerlink" title="1260. Shift 2D Grid"></a>1260. Shift 2D Grid</h3><p><a href="https://leetcode.com/contest/weekly-contest-163/problems/shift-2d-grid/" target="_blank" rel="noopener">题目</a> </p>
+<p>提交次数：1/1</p>
+<p>刚开始看成矩阵旋转，写了一会发现看错题直接暴力模拟了，看题解说可以把这个矩阵拉成线性数组移位之后在放回去。</p>
+<h3 id="1261-Find-Elements-in-a-Contaminated-Binary-Tree"><a href="#1261-Find-Elements-in-a-Contaminated-Binary-Tree" class="headerlink" title="1261. Find Elements in a Contaminated Binary Tree"></a>1261. Find Elements in a Contaminated Binary Tree</h3><p><a href="https://leetcode.com/contest/weekly-contest-163/problems/find-elements-in-a-contaminated-binary-tree/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>简单的树的遍历操作，没啥好说的</p>
+<h3 id="1262-Greatest-Sum-Divisible-by-Three"><a href="#1262-Greatest-Sum-Divisible-by-Three" class="headerlink" title="1262. Greatest Sum Divisible by Three"></a>1262. Greatest Sum Divisible by Three</h3><p><a href="https://leetcode.com/contest/weekly-contest-162/problems/number-of-closed-islands/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：0/5？</p>
+<p>难不难不好说，写这题的时候脑子简直一坨浆糊。。更没想到的是这题的dp思路和下午的Kickstart思路相同。。这个就留着那篇再说吧</p>
+<p>忘了一开始怎么想的了，好像一直在贪心结果被各种特例吊打逐渐心态就崩了</p>
+<p>两种做法：第一种很简单，求和取模，如果模3余1就找到最小的模3余1的值或者最小的两个模3余2的值，模3余2亦然。</p>
+<p>另一种就是dp思路：<code>dp[i][j]</code> 表示前<code>i</code>个元素在模3余0，1，2的最大值，状态转移方程就有：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">dp[i+<span class="number">1</span>][(j + nums[i])%<span class="number">3</span>] = <span class="built_in">max</span>(dp[i][(j + nums[i])%<span class="number">3</span>], dp[i][j]+nums[i])</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1263-Minimum-Moves-to-Move-a-Box-to-Their-Target-Location"><a href="#1263-Minimum-Moves-to-Move-a-Box-to-Their-Target-Location" class="headerlink" title="1263. Minimum Moves to Move a Box to Their Target Location"></a>1263. Minimum Moves to Move a Box to Their Target Location</h3><p><a href="https://leetcode.com/contest/weekly-contest-162/problems/maximum-score-words-formed-by-letters/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：0/?</p>
+<p>最开始看到感觉代码量挺大的，最后补一下事实上也确实代码量挺大的emmmm</p>
+<p>双重染色问题，两个BFS搞定了。</p>
+<p>首先第一重BFS来记录推箱子，分别记录箱子的位置和人的位置。在每一个状态中，以人的位置为起点进行一次BFS遍历染色，找出所有人能够在不推箱子的情况下走到的位置，如果这个位置能够推箱子，就把他加入第一重BFS中。</p>
+<p>但是坑在于如何记录箱子的移动，也就是去重。</p>
+<p>一开始我是直接以记录箱子位置来判重，但是实际上会出现需要人先把箱子推过去后过去然后再推回来的情况。尝试删除这个判重结果果然爆炸，最后看数据范围直接开了个四重数组来记录人和箱子的位置来解决的。想了想可以简化一下，三维数组来记录箱子的位置和方向，应该也是可以的。</p>
+]]></content>
+      <categories>
+        <category>Algroithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode Biweekly Contest 13解题记录</title>
+    <url>/2019/11/19/Leetcode-Biweekly-Contest-13%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>这次双周赛居然有三个medium，快结束了打完都能差点进了200（其实能进但罚时超了，，</p>
+<a id="more"></a>
+
+<p><a href="https://github.com/Itachi666/AlgorithmWarehouse/tree/master/LeetcodeContest/WeeklyContest163" target="_blank" rel="noopener">代码在这里</a></p>
+<h3 id="1256-Encode-Number"><a href="#1256-Encode-Number" class="headerlink" title="1256. Encode Number"></a>1256. Encode Number</h3><p><a href="https://leetcode.com/contest/biweekly-contest-13/problems/encode-number/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>好几种办法吧，最简单的应该就是 $n+1$ 的二进制去掉首位了。</p>
+<p>刚开始没想到，就看出来好像是以 $2^n$ 循环，写的有点复杂。</p>
+<h3 id="1257-Smallest-Common-Region"><a href="#1257-Smallest-Common-Region" class="headerlink" title="1257. Smallest Common Region"></a>1257. Smallest Common Region</h3><p><a href="https://leetcode.com/contest/biweekly-contest-13/problems/smallest-common-region/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>不能算难，但挺麻烦的。想了想构造了一棵树，然后顺着一个节点往上搜就可以了，还好数据量不大，用两个哈希表可以存下。</p>
+<h3 id="1258-Synonymous-Sentences"><a href="#1258-Synonymous-Sentences" class="headerlink" title="1258. Synonymous Sentences"></a>1258. Synonymous Sentences</h3><p><a href="https://leetcode.com/contest/biweekly-contest-13/problems/synonymous-sentences/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/2</p>
+<p>代码量有点大，wa了一次在误以为同义词的长度相同上。</p>
+<p>刚开始看数据当成了同义词只会有两个，写完发现虽然是给的每一组两个同义词，但不同组之间也可以有相同的词，也就是说可以同时有好几个单词互相是同义词。</p>
+<p>emmm就有点麻烦，被迫实现了一个并查集来统计。</p>
+<p>其他的就没什么了，一个dfs搞定。</p>
+<h3 id="1259-Handshakes-That-Don’t-Cross"><a href="#1259-Handshakes-That-Don’t-Cross" class="headerlink" title="1259. Handshakes That Don’t Cross"></a>1259. Handshakes That Don’t Cross</h3><p><a href="https://leetcode.com/contest/biweekly-contest-13/problems/handshakes-that-dont-cross/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/2</p>
+<p>想了想认出来了dp。</p>
+<p><code>dp[i]</code>表示<code>2*i</code>个人的数量，枚举和1号节点连接的点<code>j=2,4,...,2*i</code>，这样剩下的就分成了两组<code>j-2</code>和<code>i*2-j</code>，乘起来就行了。</p>
+<p>wa了一次没有对答案取余。。。不然就进200了T T</p>
+]]></content>
+      <categories>
+        <category>Algroithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>谷歌KickStart题目索引整理</title>
     <url>/2019/11/19/%E8%B0%B7%E6%AD%8CKickstart%E9%A2%98%E7%9B%AE%E7%B4%A2%E5%BC%95%E6%95%B4%E7%90%86/</url>
     <content><![CDATA[<p>发现做完今年的H轮之后Kickstart的时间表就更新成明年的了。。虽然H轮做的一坨屎但还是要回顾一下的。看了看网址都还在也能回去练习，只是没有索引了，就干脆整理一下方便回顾。</p>
@@ -253,12 +328,12 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode Weekly Contest 162</title>
-    <url>/2019/11/16/Leetcode-Weekly-Contest-162/</url>
+    <title>Leetcode Weekly Contest 162解题记录</title>
+    <url>/2019/11/16/Leetcode-Weekly-Contest-162%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>一个罚时没进200，有点难过。这次题目说实话都直接的。。</p>
 <a id="more"></a>
 
-
+<p><a href="https://github.com/Itachi666/AlgorithmWarehouse/tree/master/LeetcodeContest/WeeklyContest162" target="_blank" rel="noopener">代码在这里</a></p>
 <h3 id="1252-Cells-with-Odd-Values-in-a-Matrix"><a href="#1252-Cells-with-Odd-Values-in-a-Matrix" class="headerlink" title="1252. Cells with Odd Values in a Matrix"></a>1252. Cells with Odd Values in a Matrix</h3><p><a href="https://leetcode.com/contest/weekly-contest-162/problems/cells-with-odd-values-in-a-matrix/" target="_blank" rel="noopener">题目</a> </p>
 <p>提交次数：1/1</p>
 <p>日常签到题，数据量比较小模拟就行了</p>
@@ -274,7 +349,117 @@
 <p>提交次数：1/1</p>
 <p>dfs搜就行了。。。</p>
 <p>数据量不大，考虑了几个优化点不知道用上了没有。</p>
-<p>$$<br>\begin{eqnarray}<br>\nabla\cdot\vec{E} &amp;=&amp; \frac{\rho}{\epsilon_0} \<br>\nabla\cdot\vec{B} &amp;=&amp; 0 \<br>\nabla\times\vec{E} &amp;=&amp; -\frac{\partial B}{\partial t} \<br>\nabla\times\vec{B} &amp;=&amp; \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)<br>\end{eqnarray}<br>$$</p>
+]]></content>
+      <categories>
+        <category>Algroithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode Weekly Contest 161解题记录</title>
+    <url>/2019/11/03/Leetcode-Weekly-Contest-161%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>这回意外进前200了还是挺开心的（虽然是压线198），吃饭都香了2333</p>
+<a id="more"></a>
+
+<p><a href="https://github.com/Itachi666/AlgorithmWarehouse/tree/master/LeetcodeContest/WeeklyContest161" target="_blank" rel="noopener">代码在这里</a></p>
+<h3 id="1247-Minimum-Swaps-to-Make-Strings-Equal"><a href="#1247-Minimum-Swaps-to-Make-Strings-Equal" class="headerlink" title="1247. Minimum Swaps to Make Strings Equal"></a>1247. Minimum Swaps to Make Strings Equal</h3><p><a href="https://leetcode.com/contest/weekly-contest-161/problems/minimum-swaps-to-make-strings-equal/" target="_blank" rel="noopener">题目</a> </p>
+<p>提交次数：1/1</p>
+<p>意外卡的最久，改了好几次思路。一开始以为只要统计出x和y的数量然后除以2就行了，后来发现不是。</p>
+<p>总之纠结了一会发现只要首先找到若干的<code>xx</code>和<code>yy</code>对，最后看剩下的是不是个<code>xy&amp;yx</code>对即可。</p>
+<h3 id="1248-Count-Number-of-Nice-Subarrays"><a href="#1248-Count-Number-of-Nice-Subarrays" class="headerlink" title="1248. Count Number of Nice Subarrays"></a>1248. Count Number of Nice Subarrays</h3><p><a href="https://leetcode.com/contest/weekly-contest-161/problems/count-number-of-nice-subarrays/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>这一题猛一看还觉得有点难，仔细一看k给定了那就挺水的了：把奇数位置存起来，然后用一个长度为k的窗口扫一遍，判断有多少个就可以了。</p>
+<h3 id="1249-Minimum-Remove-to-Make-Valid-Parentheses"><a href="#1249-Minimum-Remove-to-Make-Valid-Parentheses" class="headerlink" title="1249. Minimum Remove to Make Valid Parentheses"></a>1249. Minimum Remove to Make Valid Parentheses</h3><p><a href="https://leetcode.com/contest/weekly-contest-161/problems/minimum-remove-to-make-valid-parentheses/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>括号匹配加强版。</p>
+<p>匹配途中把多余的括号位置记录下来，然后在字符串中挨个删掉就行了。</p>
+<h3 id="1250-Check-If-It-Is-a-Good-Array"><a href="#1250-Check-If-It-Is-a-Good-Array" class="headerlink" title="1250. Check If It Is a Good Array"></a>1250. Check If It Is a Good Array</h3><p><a href="https://leetcode.com/contest/weekly-contest-161/problems/check-if-it-is-a-good-array/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>一开始看见选择任意子集还有点吓人，感觉跟最大公约数相关就先写了个gcd上去，甚至还调试了调试浪费了几分钟。。。</p>
+<p>然后一看就返回个bool，那不就是看全数组的最大公约数是不是1么。。。</p>
+]]></content>
+      <categories>
+        <category>Algroithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode Biweekly Contest 12解题记录</title>
+    <url>/2019/11/03/Leetcode-Biweekly-Contest-12%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>最近两次的双周赛都做的不是很顺，在Q3上纠结了太久。</p>
+<a id="more"></a>
+
+<p><a href="https://github.com/Itachi666/AlgorithmWarehouse/tree/master/LeetcodeContest/BiweeklyContest12" target="_blank" rel="noopener">代码在这里</a></p>
+<h3 id="1243-Array-Transformation"><a href="#1243-Array-Transformation" class="headerlink" title="1243. Array Transformation"></a>1243. Array Transformation</h3><p><a href="https://leetcode.com/contest/biweekly-contest-12/problems/array-transformation/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/2</p>
+<p>签到题，然后就跪了emmm，一开始直接遍历数组然后判断操作的，结果发现前面的改动会影响后面就很难受。改成标记那些位置会改变，然后一起改就好了。</p>
+<p>当然直接vector复制一个然后复制回去也可以，，，蠢了。</p>
+<h3 id="1244-Design-A-Leaderboard"><a href="#1244-Design-A-Leaderboard" class="headerlink" title="1244. Design A Leaderboard"></a>1244. Design A Leaderboard</h3><p><a href="https://leetcode.com/contest/biweekly-contest-12/problems/design-a-leaderboard/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>这题目读的是真费劲。</p>
+<p>第一眼感觉要用数据结构，结果不知道为什么觉得n2的算法不行，非要往下找。现在看看数据范围用n2暴力算法是完全够用的。。。</p>
+<p>但用两个map来写是可以的，一开始想到了这个但是有一点没想通就搁着写后面的了。思路很简单：一个map来存每个人的成绩，第二个map来存成绩。靠map自带的有序属性来获取最大的K个成绩。</p>
+<p>好像每个人的成绩用vector也够用了</p>
+<h3 id="1245-Tree-Diameter"><a href="#1245-Tree-Diameter" class="headerlink" title="1245. Tree Diameter"></a>1245. Tree Diameter</h3><p><a href="https://leetcode.com/contest/biweekly-contest-12/problems/tree-diameter/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/5</p>
+<p>看评论说是模版题，就有点尴尬了。</p>
+<p>最开始写dfs暴力搜索每个叶子节点的最长，想了半天怎么去重也没去掉，最后果不其然超时了，关键超时就算了还试图优化一下想混过去。。。5min啊5min</p>
+<p>后来转换了一下思路，每一轮中扫描所有的节点，每一次把叶子节点删掉，删到只剩下一个或者两个节点为止，这时的轮数就是他的半径。</p>
+<p>当然dfs其实也是可以的，参考了一下大佬的方法， 思路很简单：找到距离0号节点最远的节点，然后从这个节点出发找到距离这个节点的最远节点，就是直径。</p>
+<p>这个思路就好很多，想了想哪怕这是个图也可以解决。</p>
+<p>附代码：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; w;</span><br><span class="line">    pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; best;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> par, <span class="keyword">int</span> len)</span> </span>&#123;</span><br><span class="line">        best = <span class="built_in">max</span>(best, make_pair(len, a));</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> b : w[a])&#123; </span><br><span class="line">            <span class="keyword">if</span>(b != par) &#123;</span><br><span class="line">                dfs(b, a, len + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">treeDiameter</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; edges)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = (<span class="keyword">int</span>) edges.<span class="built_in">size</span>() + <span class="number">1</span>;</span><br><span class="line">        w.<span class="built_in">clear</span>();</span><br><span class="line">        w.resize(n + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; ++i) &#123;</span><br><span class="line">            <span class="keyword">int</span> a = edges[i][<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> b = edges[i][<span class="number">1</span>];</span><br><span class="line">            w[a].push_back(b);</span><br><span class="line">            w[b].push_back(a);</span><br><span class="line">        &#125;</span><br><span class="line">        best = &#123;<span class="number">-1</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">        dfs(<span class="number">0</span>, <span class="number">-1</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">int</span> from = best.second;</span><br><span class="line">        best = &#123;<span class="number">-1</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">        dfs(from, <span class="number">-1</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> best.first;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1246-Palindrome-Removal"><a href="#1246-Palindrome-Removal" class="headerlink" title="1246. Palindrome Removal"></a>1246. Palindrome Removal</h3><p><a href="https://leetcode.com/contest/biweekly-contest-12/problems/palindrome-removal/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：0/0</p>
+<p>区间dp还是不太熟练。</p>
+<p>第三题浪费了太久，到第四题的时候时间已经不多了，看见数据范围100鬼使神差的就想搞个四重循环，当时都觉得自己失了智。</p>
+<p>其实有点被题目误导，想法是这样的：首先两层循环确定区间长度和区间首尾，然后枚举内部区间，判断把这个区间删了之后剩下的是不是个回文串。</p>
+<p>emmmm总之没调出来，后来还是参考了一下题解才搞定的：</p>
+<p>其实就是个比较标准的区间dp，把一个区间拆成两个区间就可以了，然后判断一下首尾是否相同即可。</p>
+]]></content>
+      <categories>
+        <category>Algroithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode Weekly Contest 160解题记录</title>
+    <url>/2019/10/27/Leetcode-Weekly-Contest-160%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>这次数据范围是真的小。另外因为第四题太蠢意外进了前200。。。。</p>
+<a id="more"></a>
+
+<p><a href="https://github.com/Itachi666/AlgorithmWarehouse/tree/master/LeetcodeContest/WeeklyContest160" target="_blank" rel="noopener">题解代码</a></p>
+<h3 id="1237-Find-Positive-Integer-Solution-for-a-Given-Equation"><a href="#1237-Find-Positive-Integer-Solution-for-a-Given-Equation" class="headerlink" title="1237.  Find Positive Integer Solution for a Given Equation"></a>1237.  Find Positive Integer Solution for a Given Equation</h3><p><a href="https://leetcode.com/contest/weekly-contest-160/problems/find-positive-integer-solution-for-a-given-equation/" target="_blank" rel="noopener">题目</a> </p>
+<p>提交次数：1/1</p>
+<p>签到题，一个二维单调函数<code>f(x,y)</code>找出所有<code>f(x,y)=z</code>的输入<code>(x,y)</code>，其实提高效率对每个x，二分y就可以了应该。但范围实在太小就直接暴力了。。</p>
+<h3 id="1238-Circular-Permutation-in-Binary-Representation"><a href="#1238-Circular-Permutation-in-Binary-Representation" class="headerlink" title="1238.  Circular Permutation in Binary Representation"></a>1238.  Circular Permutation in Binary Representation</h3><p><a href="https://leetcode.com/contest/weekly-contest-160/problems/circular-permutation-in-binary-representation/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>参见leetcode的<a href="https://leetcode.com/problems/gray-code/" target="_blank" rel="noopener">第89题</a>，找到这样的顺序之后把输入的start提前到最开始就可以了。</p>
+<p>人生就是一个环hhh</p>
+<h3 id="1239-Replace-the-Substring-for-Balanced-String"><a href="#1239-Replace-the-Substring-for-Balanced-String" class="headerlink" title="1239. Replace the Substring for Balanced String"></a>1239. Replace the Substring for Balanced String</h3><p><a href="https://leetcode.com/contest/weekly-contest-160/problems/maximum-length-of-a-concatenated-string-with-unique-characters/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/2</p>
+<p>数据范围太小了，总共就16个，不暴力实在不是人。。</p>
+<p>被坑了一次，没考虑到一个字符串内部可能就会有重复。</p>
+<h3 id="1240-Tiling-a-Rectangle-with-the-Fewest-Squares"><a href="#1240-Tiling-a-Rectangle-with-the-Fewest-Squares" class="headerlink" title="1240. Tiling a Rectangle with the Fewest Squares"></a>1240. Tiling a Rectangle with the Fewest Squares</h3><p><a href="https://leetcode.com/contest/weekly-contest-160/problems/tiling-a-rectangle-with-the-fewest-squares/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/2</p>
+<p>目前做过的最蠢的第四题。。前面那一堆骗分的你们好意思么。</p>
+<p>看起来是个dp，实际也是dp，但是测试样例非要搞个幺蛾子让人觉得不是dp。</p>
+<p>但实际上就是dp，最后那个测试样例是个特例，就是误导人的emmm从结果上来看这个误导效果真的很好。。。</p>
 ]]></content>
       <categories>
         <category>Algroithm</category>
@@ -287,13 +472,13 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2019/11/15/hello-world/</url>
+    <url>/2019/09/19/Hello-world-hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+ <a id="more"></a> 
+
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
- <a id="more"></a> 
-
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
@@ -308,7 +493,7 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>博客</tag>
+        <tag>Blog</tag>
       </tags>
   </entry>
 </search>
