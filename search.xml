@@ -7,7 +7,7 @@
 <p>题解代码等这两天补上。</p>
 <a id="more"></a>
 
-<p><img src="https://tvax4.sinaimg.cn/mw690/890e0d7bgy1g93oizf7o8j21520objtb.jpg" alt="image"></p>
+<p><img src="https://tvax2.sinaimg.cn/large/890e0d7bgy1g93oizf7o8j21520objtb.jpg" alt=""></p>
 <p><a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000050edd" target="_blank" rel="noopener">比赛链接</a></p>
 <h2 id="Q1-H-index"><a href="#Q1-H-index" class="headerlink" title="Q1: H-index"></a>Q1: H-index</h2><p>题目大意：一个人发表了n篇文章，每一个文章具有一个影响因子<code>A[i]</code>，如果一个人有h篇文章的影响因子都大于等于h，则这个人的H-index就是h。根据发表的文章顺序，问每一篇文章发表后这个人的H-index都变为了多少。</p>
 <p>刚开始看见小数据集只有5分的时候就有点感觉不妙，暴力写了一个交了然后开始研究大数据集，然后卡在了怎么来维护这么一个数据范围上。显然$10^5$的数据范围肯定是要$O(log n)$级别的维护，但尝试了二分插入等方法之后还是不知所措。</p>
