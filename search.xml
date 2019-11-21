@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Go的Function types学习</title>
+    <url>/2019/11/21/Go%E7%9A%84Function-types/</url>
+    <content><![CDATA[<p>翻Fabric源码的时候看到了一个<code>type ChannelProvider func() (Channel, error)</code>，半天没看懂是个啥，查了一下发现是go的<a href="https://golang.org/ref/spec#Function_types" target="_blank" rel="noopener">Function types</a>语法，于是记录一下。</p>
+<a id="more"></a>
+
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>起因是在翻Fabric sdk创建的时候发现<code>New</code>函数很明显有一个<code>channelProvider</code>函数参数，</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">New</span><span class="params">(channelProvider context.ChannelProvider, opts ...ClientOption)</span> <span class="params">(*Client, error)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	channelContext, err := channelProvider()</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, errors.WithMessage(err, <span class="string">"failed to create channel context"</span>)</span><br><span class="line">	&#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但找了一下定义发现是这么一个东西：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ChannelProvider returns channel client context</span></span><br><span class="line"><span class="keyword">type</span> ChannelProvider <span class="function"><span class="keyword">func</span><span class="params">()</span> <span class="params">(Channel, error)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>而调用过程是这样的：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//ChannelContext creates and returns channel context</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(sdk *FabricSDK)</span> <span class="title">ChannelContext</span><span class="params">(channelID <span class="keyword">string</span>, options ...ContextOption)</span> <span class="title">contextApi</span>.<span class="title">ChannelProvider</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	channelProvider := <span class="function"><span class="keyword">func</span><span class="params">()</span> <span class="params">(contextApi.Channel, error)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">		clientCtxProvider := sdk.Context(options...)</span><br><span class="line">		<span class="keyword">return</span> context.NewChannel(clientCtxProvider, channelID)</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> channelProvider</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">clientChannelContext := sdk.ChannelContext(initInfo.ChannelID, fabsdk.WithUser(initInfo.UserName), fabsdk.WithOrg(initInfo.OrgName))</span><br><span class="line">	</span><br><span class="line">channelClient, err := channel.New(clientChannelContext)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Function-Types"><a href="#Function-Types" class="headerlink" title="Function Types"></a>Function Types</h2><p>官方文档在<a href="https://golang.org/ref/spec#Function_types" target="_blank" rel="noopener">这里</a>，对其的定义是：</p>
+<blockquote>
+<p>A function type denotes the set of all functions with the same parameter and result types. </p>
+</blockquote>
+<p>首先来看一个例子：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Greeting function types</span></span><br><span class="line"><span class="keyword">type</span> Greeting <span class="function"><span class="keyword">func</span><span class="params">(name <span class="keyword">string</span>)</span> <span class="title">string</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">say</span><span class="params">(g Greeting, n <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line">    fmt.Println(g(n))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">english</span><span class="params">(name <span class="keyword">string</span>)</span> <span class="title">string</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Hello, "</span> + name</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    say(english, <span class="string">"World"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>say()</code>函数要求一个<code>Greeting</code>类型的函数参数，而<code>english()</code>函数由于参数输入输出均与<code>Greeting</code>类型相同，因此便能够作为参数传入<code>say()</code>中。</p>
+<p>我的理解是这样定义了一个函数类型或者说函数集合，同样输入输出的函数被归为一类，感觉和go的Interface设计理念有点类似，只要函数接口相同就能够传入。</p>
+<p>把上面的例子进一步扩展一下的话：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Greeting function types</span></span><br><span class="line"><span class="keyword">type</span> Greeting <span class="function"><span class="keyword">func</span><span class="params">(name <span class="keyword">string</span>)</span> <span class="title">string</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(g Greeting)</span> <span class="title">say</span><span class="params">(n <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line">    fmt.Println(g(n))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">english</span><span class="params">(name <span class="keyword">string</span>)</span> <span class="title">string</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Hello, "</span> + name</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">french</span><span class="params">(name <span class="keyword">string</span>)</span> <span class="title">string</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Bonjour, "</span> + name</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    g := Greeting(english)</span><br><span class="line">    g.say(<span class="string">"World"</span>)</span><br><span class="line">    g = Greeting(french)</span><br><span class="line">    g.say(<span class="string">"World"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Hello, World</span><br><span class="line">Bonjour, World</span><br></pre></td></tr></table></figure>
+
+<p>这就有点类的意思了。一开始先把<code>func(name string) string</code>这样的函数声明成<code>Greeting</code>类型，接着通过<code>Greeting(english)</code>将<code>english</code>函数转换成<code>Greeting</code>类型（类似强制类型转换）。通过这个转换以后，就可以借由变量<code>g</code>调用<code>Greeting</code>类型的<code>say()</code>方法。<code>Greeting(french)</code>同理。</p>
+]]></content>
+      <categories>
+        <category>Go</category>
+      </categories>
+      <tags>
+        <tag>Go</tag>
+        <tag>代码学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Kickstart 2019 Round H参赛记录与解题思路</title>
     <url>/2019/11/19/Kickstart-2019-Round-H%E5%8F%82%E8%B5%9B%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>用了一星期刷了一下今年的前几轮题，虽然感受到了这些轮数之间题目难度幅度差别有点大，但大概没想到最后结果会是惨败。打完直接自闭了。。。想了想还是记录一下吧，希望明年能成功混一件衣服回来。</p>
@@ -15,7 +55,7 @@
 <h2 id="Q2-Diagonal-Puzzle"><a href="#Q2-Diagonal-Puzzle" class="headerlink" title="Q2: Diagonal Puzzle"></a>Q2: Diagonal Puzzle</h2><p>题目大意：一个n*n的矩阵，每个矩阵中有一个白色棋子或黑色棋子，每一次可以选择一条斜的对角线（左右均可）来让一行棋子翻转，类似黑白棋。问最少多少次操作能够使全部棋子变黑。</p>
 <p>这题中途看了一眼通过率吓了一跳，比第三题还低。小数据集很明显是让暴力搜索的，可以分析出每一个对角线至多只会翻转一次，写了一个BFS结果一直在爆空间，调了一会之后心态就炸了。现在想想可能写个dfs更好一点。</p>
 <p>大数据集的第一个题解说实话我没怎么看懂。。但是第二个题解还是看懂了的，很巧妙的思路，将矩阵问题变成了一个二色染色图来搜索</p>
-<h2 id="Q3-Elevanagram"><a href="#Q3-Elevanagram" class="headerlink" title="Q3: Elevanagram"></a>Q3: Elevanagram</h2><p>题目大意：给若干个1-9，问这些是否能够组成一个11的倍数。11的倍数满足<br>$$<br>（奇数位的和-偶数位的和）mod 11=0<br>$$<br>这题大概是心态最炸的，上午刚刚做完这么一个类似的dp，下午就不记得了。用<code>dp[i][j](0&lt;=j&lt;=11)</code>表示前面<code>i</code>个数分别在模11余<code>j</code>时是否存在，然后顺次递推就可以了。</p>
+<h2 id="Q3-Elevanagram"><a href="#Q3-Elevanagram" class="headerlink" title="Q3: Elevanagram"></a>Q3: Elevanagram</h2><p>题目大意：给若干个1-9，问这些是否能够组成一个11的倍数。11的倍数满足<br>$$<br>（奇数位的和-偶数位的和）mod \space 11=0<br>$$<br>这题大概是心态最炸的，上午刚刚做完这么一个类似的dp，下午就不记得了。用<code>dp[i][j](0&lt;=j&lt;=11)</code>表示前面<code>i</code>个数分别在模11余<code>j</code>时是否存在，然后顺次递推就可以了。</p>
 <p>至于大数据集其实可以偷鸡，如果某个数的个数大于20就把他减少至20以内，事实证明是过的去的。</p>
 <p>其实中途曾经尝试考虑过这种思路，但结果上emmm，不知道怎么就给否了，很轻易的否了。。。</p>
 ]]></content>

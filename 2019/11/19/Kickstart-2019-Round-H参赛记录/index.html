@@ -60,7 +60,7 @@
 <meta property="og:description" content="用了一星期刷了一下今年的前几轮题，虽然感受到了这些轮数之间题目难度幅度差别有点大，但大概没想到最后结果会是惨败。打完直接自闭了。。。想了想还是记录一下吧，希望明年能成功混一件衣服回来。 题解代码等这两天补上。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;tvax2.sinaimg.cn&#x2F;large&#x2F;890e0d7bgy1g93oizf7o8j21520objtb.jpg">
-<meta property="og:updated_time" content="2019-11-19T14:18:59.478Z">
+<meta property="og:updated_time" content="2019-11-20T06:39:30.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;tvax2.sinaimg.cn&#x2F;large&#x2F;890e0d7bgy1g93oizf7o8j21520objtb.jpg">
 
@@ -240,10 +240,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-11-19 21:37:51 / 修改时间：22:18:59" itemprop="dateCreated datePublished" datetime="2019-11-19T21:37:51+08:00">2019-11-19</time>
+              <time title="创建时间：2019-11-19 21:37:51" itemprop="dateCreated datePublished" datetime="2019-11-19T21:37:51+08:00">2019-11-19</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-20 14:39:30" itemprop="dateModified" datetime="2019-11-20T14:39:30+08:00">2019-11-20</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -275,7 +281,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>911</span>
+              <span>917</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -306,7 +312,7 @@
 <h2 id="Q2-Diagonal-Puzzle"><a href="#Q2-Diagonal-Puzzle" class="headerlink" title="Q2: Diagonal Puzzle"></a>Q2: Diagonal Puzzle</h2><p>题目大意：一个n*n的矩阵，每个矩阵中有一个白色棋子或黑色棋子，每一次可以选择一条斜的对角线（左右均可）来让一行棋子翻转，类似黑白棋。问最少多少次操作能够使全部棋子变黑。</p>
 <p>这题中途看了一眼通过率吓了一跳，比第三题还低。小数据集很明显是让暴力搜索的，可以分析出每一个对角线至多只会翻转一次，写了一个BFS结果一直在爆空间，调了一会之后心态就炸了。现在想想可能写个dfs更好一点。</p>
 <p>大数据集的第一个题解说实话我没怎么看懂。。但是第二个题解还是看懂了的，很巧妙的思路，将矩阵问题变成了一个二色染色图来搜索</p>
-<h2 id="Q3-Elevanagram"><a href="#Q3-Elevanagram" class="headerlink" title="Q3: Elevanagram"></a>Q3: Elevanagram</h2><p>题目大意：给若干个1-9，问这些是否能够组成一个11的倍数。11的倍数满足<br>$$<br>（奇数位的和-偶数位的和）mod 11=0<br>$$<br>这题大概是心态最炸的，上午刚刚做完这么一个类似的dp，下午就不记得了。用<code>dp[i][j](0&lt;=j&lt;=11)</code>表示前面<code>i</code>个数分别在模11余<code>j</code>时是否存在，然后顺次递推就可以了。</p>
+<h2 id="Q3-Elevanagram"><a href="#Q3-Elevanagram" class="headerlink" title="Q3: Elevanagram"></a>Q3: Elevanagram</h2><p>题目大意：给若干个1-9，问这些是否能够组成一个11的倍数。11的倍数满足<br>$$<br>（奇数位的和-偶数位的和）mod \space 11=0<br>$$<br>这题大概是心态最炸的，上午刚刚做完这么一个类似的dp，下午就不记得了。用<code>dp[i][j](0&lt;=j&lt;=11)</code>表示前面<code>i</code>个数分别在模11余<code>j</code>时是否存在，然后顺次递推就可以了。</p>
 <p>至于大数据集其实可以偷鸡，如果某个数的个数大于20就把他减少至20以内，事实证明是过的去的。</p>
 <p>其实中途曾经尝试考虑过这种思路，但结果上emmm，不知道怎么就给否了，很轻易的否了。。。</p>
 
@@ -335,6 +341,9 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/2019/11/21/Go%E7%9A%84Function-types/" rel="prev" title="Go的Function types学习">
+                  Go的Function types学习 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
@@ -390,20 +399,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
