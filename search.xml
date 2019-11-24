@@ -1,6 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C++: 模板类编译过程中出现“undefined reference to”问题</title>
+    <url>/2019/11/24/C-%E6%A8%A1%E6%9D%BF%E7%B1%BB%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%87%BA%E7%8E%B0%E2%80%9Cundefined-rwenti-eference-to%E2%80%9D/</url>
+    <content><![CDATA[<p>C++在使用模版（template）类的时候，如果像通常那样将类成员函数的声明和实现分别放在<code>.h</code>和<code>.cpp</code>中，会导致在编译时会报错<code>undefined reference to</code>，找不到对应成员函数。</p>
+<a id="more"></a>
+
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>在实现一个模板类的时候遇到了一个问题：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Matrix.h</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Matrix</span> &#123;</span></span><br><span class="line">    Matrix(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;T&gt;&gt; &amp;matrix);</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">display</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Matrix.cpp</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">Matrix&lt;T&gt;::Matrix(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;T&gt;&gt; &amp;matrix) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">void</span> Matrix&lt;T&gt;::<span class="built_in">display</span>() &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.cpp</span></span><br><span class="line">Matrix&lt;<span class="keyword">int</span>&gt; base(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>(<span class="keyword">int</span>)&gt; m);</span><br><span class="line">base.<span class="built_in">display</span>();</span><br></pre></td></tr></table></figure>
+
+<p>编译时会报错：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CMakeFiles\AlgorithmWarehouse.dir/objects.a(main.cpp.obj): In function `main&apos;:</span><br><span class="line">./main.cpp:75: undefined reference to `Matrix&lt;int&gt;::Matrix(std::vector&lt;std::vector&lt;int, std::allocator&lt;int&gt; &gt;, std::allocator&lt;std::vector&lt;int, std::allocator&lt;int&gt; &gt; &gt; &gt;&amp;)&apos;</span><br><span class="line">./main.cpp:76: undefined reference to `Matrix&lt;int&gt;::display()&apos;</span><br></pre></td></tr></table></figure>
+
+<p>很迷不知道为什么会找不到构造函数，查了一圈确定是因为使用<code>template&lt;typename T&gt;</code>的原因，总结一下。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>下面使用一个简单的例子来叙述这个问题：假设要实现一个栈，有两个文件<code>Stack.h</code>和<code>Stack.cpp</code>，栈声明使用<code>template&lt;typename T&gt;</code>，<code>main.cpp</code>在<code>import &quot;Stack.h&quot;</code>后调用这个类。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Stack.h</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stack</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(...)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Stack.cpp</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">void</span> Stack&lt;T&gt;::push() &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.cpp</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">"Stack.h"</span></span><br><span class="line">Stack&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">s.push(...);</span><br></pre></td></tr></table></figure>
+
+<p>编译下来会报错：<code>undefined reference to</code></p>
+<p>因为<code>template</code>其实是一种类似语法糖的东西，C++中每一个对象所占用的空间大小，是在编译的时候就确定的，在模板类没有真正的被使用之前，编译器是无法知道，模板类中使用模板类型的对象的所占用的空间的大小的。只有模板被真正使用的时候，编译器才知道，模板套用的是什么类型，应该分配多少空间。这也就是模板类为什么只是称之为模板，而不是泛型的缘故。</p>
+<p>既然是在编译的时候，根据套用的不同类型进行编译，那么，套用不同类型的模板类实际上就是两个不同的类型，也就是说，<code>stack&lt;int&gt;</code>和<code>stack&lt;char&gt;</code>是两个不同的数据类型，他们共同的成员函数也不是同一个函数，只不过具有相似的功能罢了。</p>
+<p>所以模版本质其实和宏差不多，不同于原本的类型定义。编译器在编译<code>main.cpp</code>时会根据需要隐式实例化诸如 <code>Stack&lt;int&gt;</code>，如果这个实例并没有在<code>main.cpp</code>中，编译器就会根据include去找，但是显然编译时<code>Stack.h</code>中并没有对<code>Stack&lt;int&gt;</code>的声明，于是就报错了。</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><h3 id="显式声明"><a href="#显式声明" class="headerlink" title="显式声明"></a>显式声明</h3><p>在<code>Stack.cpp</code>中显式声明会用到的类型：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> <span class="class"><span class="keyword">class</span> <span class="title">Stack</span>&lt;int&gt;;</span></span><br><span class="line"><span class="keyword">template</span> <span class="class"><span class="keyword">class</span> <span class="title">Stack</span>&lt;std::string&gt;;</span></span><br></pre></td></tr></table></figure>
+
+<p>我认为的最好的办法，但缺点也很显然，如果需要一种新的数据类型就很难受，必须手动再添加，封装上不太友好。</p>
+<h3 id="全放到头文件中"><a href="#全放到头文件中" class="headerlink" title="全放到头文件中"></a>全放到头文件中</h3><p>很直接，把所有<code>Stack.cpp</code>中的源代码全放到<code>Stack.h</code>中，不需要进行任何修改。但缺点就是如果这个头文件在很多文件中被使用的话，会影响编译速度，但不会产生任何链接问题，因为编译器会忽略重复实现。</p>
+<h3 id="把实现代码移至一个新头文件中"><a href="#把实现代码移至一个新头文件中" class="headerlink" title="把实现代码移至一个新头文件中"></a>把实现代码移至一个新头文件中</h3><p>把<code>Stack.cpp</code>改为<code>Stack_impl.h</code>，然后在<code>Stack.h</code>里面<code>import &quot;Stack_impl.h&quot;</code>，这样能保证代码实现和声明在不同的文件中，但本质上和上一个解决办法是一样的。</p>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>代码学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode Weekly Contest 164解题记录</title>
+    <url>/2019/11/24/Leetcode-Weekly-Contest-164%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>水题四道emmm，还算不错40分钟做完了，侥幸进了前200</p>
+<a id="more"></a>
+
+<p><a href="https://github.com/Itachi666/AlgorithmWarehouse/tree/master/LeetcodeContest/WeeklyContest164" target="_blank" rel="noopener">代码在这里</a></p>
+<h3 id="1266-Minimum-Time-Visiting-All-Points"><a href="#1266-Minimum-Time-Visiting-All-Points" class="headerlink" title="1266. Minimum Time Visiting All Points"></a>1266. Minimum Time Visiting All Points</h3><p><a href="https://leetcode.com/contest/weekly-contest-164/problems/minimum-time-visiting-all-points/" target="_blank" rel="noopener">题目</a> </p>
+<p>提交次数：1/1</p>
+<p>两点路线固定，还按顺序，直接算就行了。</p>
+<h3 id="1267-Count-Servers-that-Communicate"><a href="#1267-Count-Servers-that-Communicate" class="headerlink" title="1267. Count Servers that Communicate"></a>1267. Count Servers that Communicate</h3><p><a href="https://leetcode.com/contest/weekly-contest-164/problems/count-servers-that-communicate/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>开两个数组记录每行每列各有多少个机器就行了。</p>
+<p>本来想尝试一次扫描搞定来着，看了看数据范围也不大不打算耽误多长时间了，就直接暴力了。</p>
+<h3 id="1268-Greatest-Sum-Divisible-by-Three"><a href="#1268-Greatest-Sum-Divisible-by-Three" class="headerlink" title="1268. Greatest Sum Divisible by Three"></a>1268. Greatest Sum Divisible by Three</h3><p><a href="https://leetcode.com/contest/weekly-contest-164/problems/search-suggestions-system/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>最后写的这道题，看见这种一堆words的就头疼。。</p>
+<p>数据范围不大直接写的暴力，单词每加一个字母得到的搜索结果肯定是上一个搜索结果里面的，最后输出前把记录取前三个就行了。</p>
+<p>看了看题解似乎是想让用字典树，真的这个数据范围太弱了加俩零应该就没啥问题了。。字典树的问题在于会自动去重，要在叶子的地方做一些处理。</p>
+<h3 id="1269-Number-of-Ways-to-Stay-in-the-Same-Place-After-Some-Steps"><a href="#1269-Number-of-Ways-to-Stay-in-the-Same-Place-After-Some-Steps" class="headerlink" title="1269. Number of Ways to Stay in the Same Place After Some Steps"></a>1269. Number of Ways to Stay in the Same Place After Some Steps</h3><p><a href="https://leetcode.com/contest/weekly-contest-164/problems/number-of-ways-to-stay-in-the-same-place-after-some-steps/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>不知道见多少次的dp了，<code>arrLen</code>看着挺吓人但其实也就那么回事，只要<code>steps</code>不高压根就走不过去。</p>
+]]></content>
+      <categories>
+        <category>Algroithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Go的Function types学习</title>
     <url>/2019/11/21/Go%E7%9A%84Function-types/</url>
     <content><![CDATA[<p>翻Fabric源码的时候看到了一个<code>type ChannelProvider func() (Channel, error)</code>，半天没看懂是个啥，查了一下发现是go的<a href="https://golang.org/ref/spec#Function_types" target="_blank" rel="noopener">Function types</a>语法，于是记录一下。</p>
