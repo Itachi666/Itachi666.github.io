@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>C++: 模板类编译过程中出现“undefined reference to”问题</title>
-    <url>/2019/11/24/C-%E6%A8%A1%E6%9D%BF%E7%B1%BB%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%87%BA%E7%8E%B0%E2%80%9Cundefined-rwenti-eference-to%E2%80%9D/</url>
+    <url>/2019/11/24/C-%E6%A8%A1%E6%9D%BF%E7%B1%BB%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%87%BA%E7%8E%B0%E2%80%9Cundefined%20reference%20to%E2%80%9D%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>C++在使用模版（template）类的时候，如果像通常那样将类成员函数的声明和实现分别放在<code>.h</code>和<code>.cpp</code>中，会导致在编译时会报错<code>undefined reference to</code>，找不到对应成员函数。</p>
 <a id="more"></a>
 
@@ -103,8 +103,8 @@
         <category>Go</category>
       </categories>
       <tags>
-        <tag>Go</tag>
         <tag>代码学习</tag>
+        <tag>Go</tag>
       </tags>
   </entry>
   <entry>
