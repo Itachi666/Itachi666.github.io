@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>C++: 模板类编译过程中出现“undefined reference to”问题</title>
-    <url>/2019/11/24/C-%E6%A8%A1%E6%9D%BF%E7%B1%BB%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%87%BA%E7%8E%B0%E2%80%9Cundefined%20reference%20to%E2%80%9D%E9%97%AE%E9%A2%98/</url>
+    <url>/posts/bfee53d1/</url>
     <content><![CDATA[<p>C++在使用模版（template）类的时候，如果像通常那样将类成员函数的声明和实现分别放在<code>.h</code>和<code>.cpp</code>中，会导致在编译时会报错<code>undefined reference to</code>，找不到对应成员函数。</p>
 <a id="more"></a>
 
@@ -37,7 +37,7 @@
   </entry>
   <entry>
     <title>Leetcode Weekly Contest 164解题记录</title>
-    <url>/2019/11/24/Leetcode-Weekly-Contest-164%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+    <url>/posts/67cbce32/</url>
     <content><![CDATA[<p>水题四道emmm，还算不错40分钟做完了，侥幸进了前200</p>
 <a id="more"></a>
 
@@ -69,7 +69,7 @@
   </entry>
   <entry>
     <title>Go的Function types学习</title>
-    <url>/2019/11/21/Go%E7%9A%84Function-types/</url>
+    <url>/posts/b617895a/</url>
     <content><![CDATA[<p>翻Fabric源码的时候看到了一个<code>type ChannelProvider func() (Channel, error)</code>，半天没看懂是个啥，查了一下发现是go的<a href="https://golang.org/ref/spec#Function_types" target="_blank" rel="noopener">Function types</a>语法，于是记录一下。</p>
 <a id="more"></a>
 
@@ -103,13 +103,13 @@
         <category>Go</category>
       </categories>
       <tags>
-        <tag>代码学习</tag>
         <tag>Go</tag>
+        <tag>代码学习</tag>
       </tags>
   </entry>
   <entry>
     <title>Kickstart 2019 Round H参赛记录与解题思路</title>
-    <url>/2019/11/19/Kickstart-2019-Round-H%E5%8F%82%E8%B5%9B%E8%AE%B0%E5%BD%95/</url>
+    <url>/posts/65c9cf54/</url>
     <content><![CDATA[<p>用了一星期刷了一下今年的前几轮题，虽然感受到了这些轮数之间题目难度幅度差别有点大，但大概没想到最后结果会是惨败。打完直接自闭了。。。想了想还是记录一下吧，希望明年能成功混一件衣服回来。</p>
 <p>题解代码等这两天补上。</p>
 <a id="more"></a>
@@ -138,7 +138,7 @@
   </entry>
   <entry>
     <title>Leetcode Weekly Contest 163解题记录</title>
-    <url>/2019/11/19/Leetcode-Weekly-Contest-163%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+    <url>/posts/1ab8c86a/</url>
     <content><![CDATA[<p>头天晚上睡得太晚硬是睡过了。。迟到了半小时开始做，结果只做出来了两道。但没想到排名直接掉了40+，这掉的也太多了。。事实证明刚爬起来就不要瞎搞什么动脑子的活动。</p>
 <a id="more"></a>
 
@@ -178,7 +178,7 @@
   </entry>
   <entry>
     <title>Leetcode Biweekly Contest 13解题记录</title>
-    <url>/2019/11/19/Leetcode-Biweekly-Contest-13%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+    <url>/posts/6b80b7aa/</url>
     <content><![CDATA[<p>这次双周赛居然有三个medium，快结束了打完都能差点进了200（其实能进但罚时超了，，</p>
 <a id="more"></a>
 
@@ -213,7 +213,7 @@
   </entry>
   <entry>
     <title>谷歌KickStart题目索引整理</title>
-    <url>/2019/11/19/%E8%B0%B7%E6%AD%8CKickstart%E9%A2%98%E7%9B%AE%E7%B4%A2%E5%BC%95%E6%95%B4%E7%90%86/</url>
+    <url>/posts/537758fd/</url>
     <content><![CDATA[<p>发现做完今年的H轮之后Kickstart的时间表就更新成明年的了。。虽然H轮做的一坨屎但还是要回顾一下的。看了看网址都还在也能回去练习，只是没有索引了，就干脆整理一下方便回顾。</p>
 <a id="more"></a>
 
@@ -466,7 +466,7 @@
   </entry>
   <entry>
     <title>Leetcode Weekly Contest 162解题记录</title>
-    <url>/2019/11/16/Leetcode-Weekly-Contest-162%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+    <url>/posts/c72e11ef/</url>
     <content><![CDATA[<p>一个罚时没进200，有点难过。这次题目说实话都直接的。。</p>
 <a id="more"></a>
 
@@ -498,7 +498,7 @@
   </entry>
   <entry>
     <title>Leetcode Weekly Contest 161解题记录</title>
-    <url>/2019/11/03/Leetcode-Weekly-Contest-161%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+    <url>/posts/7ae47d21/</url>
     <content><![CDATA[<p>这回意外进前200了还是挺开心的（虽然是压线198），吃饭都香了2333</p>
 <a id="more"></a>
 
@@ -530,7 +530,7 @@
   </entry>
   <entry>
     <title>Leetcode Biweekly Contest 12解题记录</title>
-    <url>/2019/11/03/Leetcode-Biweekly-Contest-12%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+    <url>/posts/b6166e2f/</url>
     <content><![CDATA[<p>最近两次的双周赛都做的不是很顺，在Q3上纠结了太久。</p>
 <a id="more"></a>
 
@@ -576,7 +576,7 @@
   </entry>
   <entry>
     <title>Leetcode Weekly Contest 160解题记录</title>
-    <url>/2019/10/27/Leetcode-Weekly-Contest-160%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+    <url>/posts/a772a4a4/</url>
     <content><![CDATA[<p>这次数据范围是真的小。另外因为第四题太蠢意外进了前200。。。。</p>
 <a id="more"></a>
 
@@ -609,7 +609,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2019/09/19/Hello-world-hello-world/</url>
+    <url>/posts/4a17b156/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
  <a id="more"></a> 
 

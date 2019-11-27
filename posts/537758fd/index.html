@@ -55,14 +55,14 @@
 <meta name="keywords" content="Algorithm,Kickstart,Google">
 <meta property="og:type" content="article">
 <meta property="og:title" content="谷歌KickStart题目索引整理">
-<meta property="og:url" content="https:&#x2F;&#x2F;itachi666.github.io&#x2F;2019&#x2F;11&#x2F;19&#x2F;%E8%B0%B7%E6%AD%8CKickstart%E9%A2%98%E7%9B%AE%E7%B4%A2%E5%BC%95%E6%95%B4%E7%90%86&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;itachi666.github.io&#x2F;posts&#x2F;537758fd&#x2F;index.html">
 <meta property="og:site_name" content="永不消失的幻想乡">
 <meta property="og:description" content="发现做完今年的H轮之后Kickstart的时间表就更新成明年的了。。虽然H轮做的一坨屎但还是要回顾一下的。看了看网址都还在也能回去练习，只是没有索引了，就干脆整理一下方便回顾。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-11-19T13:38:57.716Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://itachi666.github.io/2019/11/19/%E8%B0%B7%E6%AD%8CKickstart%E9%A2%98%E7%9B%AE%E7%B4%A2%E5%BC%95%E6%95%B4%E7%90%86/">
+<link rel="canonical" href="https://itachi666.github.io/posts/537758fd/">
 
 
 <script id="page-configurations">
@@ -216,7 +216,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://itachi666.github.io/2019/11/19/%E8%B0%B7%E6%AD%8CKickstart%E9%A2%98%E7%9B%AE%E7%B4%A2%E5%BC%95%E6%95%B4%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="https://itachi666.github.io/posts/537758fd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -261,7 +261,7 @@
             </span>
 
           
-            <span id="/2019/11/19/%E8%B0%B7%E6%AD%8CKickstart%E9%A2%98%E7%9B%AE%E7%B4%A2%E5%BC%95%E6%95%B4%E7%90%86/" class="post-meta-item leancloud_visitors" data-flag-title="谷歌KickStart题目索引整理" title="阅读次数">
+            <span id="/posts/537758fd/" class="post-meta-item leancloud_visitors" data-flag-title="谷歌KickStart题目索引整理" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -549,7 +549,7 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/16/Leetcode-Weekly-Contest-162%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" rel="next" title="Leetcode Weekly Contest 162解题记录">
+                <a href="/posts/c72e11ef/" rel="next" title="Leetcode Weekly Contest 162解题记录">
                   <i class="fa fa-chevron-left"></i> Leetcode Weekly Contest 162解题记录
                 </a>
             </div>
@@ -557,7 +557,7 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/19/Leetcode-Biweekly-Contest-13%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" rel="prev" title="Leetcode Biweekly Contest 13解题记录">
+                <a href="/posts/6b80b7aa/" rel="prev" title="Leetcode Biweekly Contest 13解题记录">
                   Leetcode Biweekly Contest 13解题记录 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
@@ -712,21 +712,18 @@
         .then(({ results }) => {
           if (results.length > 0) {
             var counter = results[0];
-              leancloudSelector(url).innerText = counter.time + 1;
             Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
               .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
               .catch(error => {
                 console.log('Failed to save visitor count', error);
               })
           } else {
-              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
-                .then(response => response.json())
-                .then(() => {
-                  leancloudSelector(url).innerText = 1;
-                })
-                .catch(error => {
-                  console.log('Failed to create', error);
-                });
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
           }
         })
         .catch(error => {
@@ -901,7 +898,7 @@
       repo: 'Itachi666.github.io',
       owner: 'Itachi666',
       admin: ['Itachi666'],
-      id: 'bfb093d60a2c3cefa1838560185f2981',
+      id: '78058a33d367cc20783ce2459271b22d',
         language: 'zh-CN',
       distractionFreeMode: 'true'
     });

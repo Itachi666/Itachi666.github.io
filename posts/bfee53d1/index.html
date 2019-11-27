@@ -51,20 +51,18 @@
   };
 </script>
 
-  <meta name="description" content="用了一星期刷了一下今年的前几轮题，虽然感受到了这些轮数之间题目难度幅度差别有点大，但大概没想到最后结果会是惨败。打完直接自闭了。。。想了想还是记录一下吧，希望明年能成功混一件衣服回来。 题解代码等这两天补上。">
-<meta name="keywords" content="Algorithm,Kickstart,Google">
+  <meta name="description" content="C++在使用模版（template）类的时候，如果像通常那样将类成员函数的声明和实现分别放在.h和.cpp中，会导致在编译时会报错undefined reference to，找不到对应成员函数。">
+<meta name="keywords" content="C++,代码学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Kickstart 2019 Round H参赛记录与解题思路">
-<meta property="og:url" content="https:&#x2F;&#x2F;itachi666.github.io&#x2F;2019&#x2F;11&#x2F;19&#x2F;Kickstart-2019-Round-H%E5%8F%82%E8%B5%9B%E8%AE%B0%E5%BD%95&#x2F;index.html">
+<meta property="og:title" content="C++: 模板类编译过程中出现“undefined reference to”问题">
+<meta property="og:url" content="https:&#x2F;&#x2F;itachi666.github.io&#x2F;posts&#x2F;bfee53d1&#x2F;index.html">
 <meta property="og:site_name" content="永不消失的幻想乡">
-<meta property="og:description" content="用了一星期刷了一下今年的前几轮题，虽然感受到了这些轮数之间题目难度幅度差别有点大，但大概没想到最后结果会是惨败。打完直接自闭了。。。想了想还是记录一下吧，希望明年能成功混一件衣服回来。 题解代码等这两天补上。">
+<meta property="og:description" content="C++在使用模版（template）类的时候，如果像通常那样将类成员函数的声明和实现分别放在.h和.cpp中，会导致在编译时会报错undefined reference to，找不到对应成员函数。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;tvax2.sinaimg.cn&#x2F;large&#x2F;890e0d7bgy1g93oizf7o8j21520objtb.jpg">
-<meta property="og:updated_time" content="2019-11-20T06:39:30.085Z">
+<meta property="og:updated_time" content="2019-11-24T08:19:35.091Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;tvax2.sinaimg.cn&#x2F;large&#x2F;890e0d7bgy1g93oizf7o8j21520objtb.jpg">
 
-<link rel="canonical" href="https://itachi666.github.io/2019/11/19/Kickstart-2019-Round-H%E5%8F%82%E8%B5%9B%E8%AE%B0%E5%BD%95/">
+<link rel="canonical" href="https://itachi666.github.io/posts/bfee53d1/">
 
 
 <script id="page-configurations">
@@ -78,7 +76,7 @@
   };
 </script>
 
-  <title>Kickstart 2019 Round H参赛记录与解题思路 | 永不消失的幻想乡</title>
+  <title>C++: 模板类编译过程中出现“undefined reference to”问题 | 永不消失的幻想乡</title>
   
 
 
@@ -218,7 +216,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://itachi666.github.io/2019/11/19/Kickstart-2019-Round-H%E5%8F%82%E8%B5%9B%E8%AE%B0%E5%BD%95/">
+    <link itemprop="mainEntityOfPage" href="https://itachi666.github.io/posts/bfee53d1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -231,7 +229,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Kickstart 2019 Round H参赛记录与解题思路
+          C++: 模板类编译过程中出现“undefined reference to”问题
         </h1>
 
         <div class="post-meta">
@@ -240,36 +238,24 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-11-19 21:37:51" itemprop="dateCreated datePublished" datetime="2019-11-19T21:37:51+08:00">2019-11-19</time>
+              <time title="创建时间：2019-11-24 15:22:25 / 修改时间：16:19:35" itemprop="dateCreated datePublished" datetime="2019-11-24T15:22:25+08:00">2019-11-24</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-20 14:39:30" itemprop="dateModified" datetime="2019-11-20T14:39:30+08:00">2019-11-20</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algroithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algroithm</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algroithm/Google/" itemprop="url" rel="index">
-                    <span itemprop="name">Google</span>
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
                   </a>
                 </span>
             </span>
 
           
-            <span id="/2019/11/19/Kickstart-2019-Round-H%E5%8F%82%E8%B5%9B%E8%AE%B0%E5%BD%95/" class="post-meta-item leancloud_visitors" data-flag-title="Kickstart 2019 Round H参赛记录与解题思路" title="阅读次数">
+            <span id="/posts/bfee53d1/" class="post-meta-item leancloud_visitors" data-flag-title="C++: 模板类编译过程中出现“undefined reference to”问题" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -281,14 +267,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>917</span>
+              <span>2.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -300,21 +286,29 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>用了一星期刷了一下今年的前几轮题，虽然感受到了这些轮数之间题目难度幅度差别有点大，但大概没想到最后结果会是惨败。打完直接自闭了。。。想了想还是记录一下吧，希望明年能成功混一件衣服回来。</p>
-<p>题解代码等这两天补上。</p>
+        <p>C++在使用模版（template）类的时候，如果像通常那样将类成员函数的声明和实现分别放在<code>.h</code>和<code>.cpp</code>中，会导致在编译时会报错<code>undefined reference to</code>，找不到对应成员函数。</p>
 <a id="more"></a>
 
-<p><img src="https://tvax2.sinaimg.cn/large/890e0d7bgy1g93oizf7o8j21520objtb.jpg" alt=""></p>
-<p><a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000050edd" target="_blank" rel="noopener">比赛链接</a></p>
-<h2 id="Q1-H-index"><a href="#Q1-H-index" class="headerlink" title="Q1: H-index"></a>Q1: H-index</h2><p>题目大意：一个人发表了n篇文章，每一个文章具有一个影响因子<code>A[i]</code>，如果一个人有h篇文章的影响因子都大于等于h，则这个人的H-index就是h。根据发表的文章顺序，问每一篇文章发表后这个人的H-index都变为了多少。</p>
-<p>刚开始看见小数据集只有5分的时候就有点感觉不妙，暴力写了一个交了然后开始研究大数据集，然后卡在了怎么来维护这么一个数据范围上。显然$10^5$的数据范围肯定是要$O(log n)$级别的维护，但尝试了二分插入等方法之后还是不知所措。</p>
-<p>看过答案之后感觉其实是有暗示的，$O(log n)$级别的数据维护其实没几个，该想到用最小堆维护的。</p>
-<h2 id="Q2-Diagonal-Puzzle"><a href="#Q2-Diagonal-Puzzle" class="headerlink" title="Q2: Diagonal Puzzle"></a>Q2: Diagonal Puzzle</h2><p>题目大意：一个n*n的矩阵，每个矩阵中有一个白色棋子或黑色棋子，每一次可以选择一条斜的对角线（左右均可）来让一行棋子翻转，类似黑白棋。问最少多少次操作能够使全部棋子变黑。</p>
-<p>这题中途看了一眼通过率吓了一跳，比第三题还低。小数据集很明显是让暴力搜索的，可以分析出每一个对角线至多只会翻转一次，写了一个BFS结果一直在爆空间，调了一会之后心态就炸了。现在想想可能写个dfs更好一点。</p>
-<p>大数据集的第一个题解说实话我没怎么看懂。。但是第二个题解还是看懂了的，很巧妙的思路，将矩阵问题变成了一个二色染色图来搜索</p>
-<h2 id="Q3-Elevanagram"><a href="#Q3-Elevanagram" class="headerlink" title="Q3: Elevanagram"></a>Q3: Elevanagram</h2><p>题目大意：给若干个1-9，问这些是否能够组成一个11的倍数。11的倍数满足<br>$$<br>（奇数位的和-偶数位的和）mod \space 11=0<br>$$<br>这题大概是心态最炸的，上午刚刚做完这么一个类似的dp，下午就不记得了。用<code>dp[i][j](0&lt;=j&lt;=11)</code>表示前面<code>i</code>个数分别在模11余<code>j</code>时是否存在，然后顺次递推就可以了。</p>
-<p>至于大数据集其实可以偷鸡，如果某个数的个数大于20就把他减少至20以内，事实证明是过的去的。</p>
-<p>其实中途曾经尝试考虑过这种思路，但结果上emmm，不知道怎么就给否了，很轻易的否了。。。</p>
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>在实现一个模板类的时候遇到了一个问题：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Matrix.h</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Matrix</span> &#123;</span></span><br><span class="line">    Matrix(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;T&gt;&gt; &amp;matrix);</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">display</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Matrix.cpp</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">Matrix&lt;T&gt;::Matrix(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;T&gt;&gt; &amp;matrix) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">void</span> Matrix&lt;T&gt;::<span class="built_in">display</span>() &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.cpp</span></span><br><span class="line">Matrix&lt;<span class="keyword">int</span>&gt; base(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>(<span class="keyword">int</span>)&gt; m);</span><br><span class="line">base.<span class="built_in">display</span>();</span><br></pre></td></tr></table></figure>
+
+<p>编译时会报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CMakeFiles\AlgorithmWarehouse.dir/objects.a(main.cpp.obj): In function `main&apos;:</span><br><span class="line">./main.cpp:75: undefined reference to `Matrix&lt;int&gt;::Matrix(std::vector&lt;std::vector&lt;int, std::allocator&lt;int&gt; &gt;, std::allocator&lt;std::vector&lt;int, std::allocator&lt;int&gt; &gt; &gt; &gt;&amp;)&apos;</span><br><span class="line">./main.cpp:76: undefined reference to `Matrix&lt;int&gt;::display()&apos;</span><br></pre></td></tr></table></figure>
+
+<p>很迷不知道为什么会找不到构造函数，查了一圈确定是因为使用<code>template&lt;typename T&gt;</code>的原因，总结一下。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>下面使用一个简单的例子来叙述这个问题：假设要实现一个栈，有两个文件<code>Stack.h</code>和<code>Stack.cpp</code>，栈声明使用<code>template&lt;typename T&gt;</code>，<code>main.cpp</code>在<code>import &quot;Stack.h&quot;</code>后调用这个类。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Stack.h</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stack</span> &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(...)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Stack.cpp</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">void</span> Stack&lt;T&gt;::push() &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.cpp</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">"Stack.h"</span></span><br><span class="line">Stack&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">s.push(...);</span><br></pre></td></tr></table></figure>
+
+<p>编译下来会报错：<code>undefined reference to</code></p>
+<p>因为<code>template</code>其实是一种类似语法糖的东西，C++中每一个对象所占用的空间大小，是在编译的时候就确定的，在模板类没有真正的被使用之前，编译器是无法知道，模板类中使用模板类型的对象的所占用的空间的大小的。只有模板被真正使用的时候，编译器才知道，模板套用的是什么类型，应该分配多少空间。这也就是模板类为什么只是称之为模板，而不是泛型的缘故。</p>
+<p>既然是在编译的时候，根据套用的不同类型进行编译，那么，套用不同类型的模板类实际上就是两个不同的类型，也就是说，<code>stack&lt;int&gt;</code>和<code>stack&lt;char&gt;</code>是两个不同的数据类型，他们共同的成员函数也不是同一个函数，只不过具有相似的功能罢了。</p>
+<p>所以模版本质其实和宏差不多，不同于原本的类型定义。编译器在编译<code>main.cpp</code>时会根据需要隐式实例化诸如 <code>Stack&lt;int&gt;</code>，如果这个实例并没有在<code>main.cpp</code>中，编译器就会根据include去找，但是显然编译时<code>Stack.h</code>中并没有对<code>Stack&lt;int&gt;</code>的声明，于是就报错了。</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><h3 id="显式声明"><a href="#显式声明" class="headerlink" title="显式声明"></a>显式声明</h3><p>在<code>Stack.cpp</code>中显式声明会用到的类型：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> <span class="class"><span class="keyword">class</span> <span class="title">Stack</span>&lt;int&gt;;</span></span><br><span class="line"><span class="keyword">template</span> <span class="class"><span class="keyword">class</span> <span class="title">Stack</span>&lt;std::string&gt;;</span></span><br></pre></td></tr></table></figure>
+
+<p>我认为的最好的办法，但缺点也很显然，如果需要一种新的数据类型就很难受，必须手动再添加，封装上不太友好。</p>
+<h3 id="全放到头文件中"><a href="#全放到头文件中" class="headerlink" title="全放到头文件中"></a>全放到头文件中</h3><p>很直接，把所有<code>Stack.cpp</code>中的源代码全放到<code>Stack.h</code>中，不需要进行任何修改。但缺点就是如果这个头文件在很多文件中被使用的话，会影响编译速度，但不会产生任何链接问题，因为编译器会忽略重复实现。</p>
+<h3 id="把实现代码移至一个新头文件中"><a href="#把实现代码移至一个新头文件中" class="headerlink" title="把实现代码移至一个新头文件中"></a>把实现代码移至一个新头文件中</h3><p>把<code>Stack.cpp</code>改为<code>Stack_impl.h</code>，然后在<code>Stack.h</code>里面<code>import &quot;Stack_impl.h&quot;</code>，这样能保证代码实现和声明在不同的文件中，但本质上和上一个解决办法是一样的。</p>
 
     </div>
 
@@ -324,26 +318,22 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
-              <a href="/tags/Kickstart/" rel="tag"># Kickstart</a>
-              <a href="/tags/Google/" rel="tag"># Google</a>
+              <a href="/tags/C/" rel="tag"># C++</a>
+              <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A0/" rel="tag"># 代码学习</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/19/Leetcode-Weekly-Contest-163%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" rel="next" title="Leetcode Weekly Contest 163解题记录">
-                  <i class="fa fa-chevron-left"></i> Leetcode Weekly Contest 163解题记录
+                <a href="/posts/67cbce32/" rel="next" title="Leetcode Weekly Contest 164解题记录">
+                  <i class="fa fa-chevron-left"></i> Leetcode Weekly Contest 164解题记录
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/21/Go%E7%9A%84Function-types/" rel="prev" title="Go的Function types学习">
-                  Go的Function types学习 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -383,7 +373,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Q1-H-index"><span class="nav-number">1.</span> <span class="nav-text">Q1: H-index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q2-Diagonal-Puzzle"><span class="nav-number">2.</span> <span class="nav-text">Q2: Diagonal Puzzle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q3-Elevanagram"><span class="nav-number">3.</span> <span class="nav-text">Q3: Elevanagram</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#起因"><span class="nav-number">1.</span> <span class="nav-text">起因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方法"><span class="nav-number">3.</span> <span class="nav-text">解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#显式声明"><span class="nav-number">3.1.</span> <span class="nav-text">显式声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全放到头文件中"><span class="nav-number">3.2.</span> <span class="nav-text">全放到头文件中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把实现代码移至一个新头文件中"><span class="nav-number">3.3.</span> <span class="nav-text">把实现代码移至一个新头文件中</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -496,21 +486,18 @@
         .then(({ results }) => {
           if (results.length > 0) {
             var counter = results[0];
-              leancloudSelector(url).innerText = counter.time + 1;
             Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
               .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
               .catch(error => {
                 console.log('Failed to save visitor count', error);
               })
           } else {
-              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
-                .then(response => response.json())
-                .then(() => {
-                  leancloudSelector(url).innerText = 1;
-                })
-                .catch(error => {
-                  console.log('Failed to create', error);
-                });
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
           }
         })
         .catch(error => {
@@ -624,54 +611,6 @@
   
 
   
-      
-<script type="text/x-mathjax-config">
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') {
-          next = next.nextSibling;
-        }
-        if (next && next.nodeName.toLowerCase() === 'br') {
-          next.parentNode.removeChild(next);
-        }
-      }
-    });
-  });
-
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-      if (element.nodeName.toLowerCase() == 'li') {
-        element = element.parentNode;
-      }
-      element.classList.add('has-jax');
-    }
-  });
-</script>
-<script>
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
-    MathJax.Hub.Typeset();
-  }, window.MathJax);
-</script>
-
-    
 
   
 
@@ -685,7 +624,7 @@
       repo: 'Itachi666.github.io',
       owner: 'Itachi666',
       admin: ['Itachi666'],
-      id: 'c8d9242b56d36cfe94cea155e3ef50bd',
+      id: '5fdc831ce56915a2a4794a355df302fb',
         language: 'zh-CN',
       distractionFreeMode: 'true'
     });

@@ -214,7 +214,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://itachi666.github.io/2019/10/27/Leetcode-Weekly-Contest-160%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/">
+    <link itemprop="mainEntityOfPage" href="https://itachi666.github.io/posts/a772a4a4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -228,7 +228,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/10/27/Leetcode-Weekly-Contest-160%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">Leetcode Weekly Contest 160解题记录</a>
+            <a href="/posts/a772a4a4/" class="post-title-link" itemprop="url">Leetcode Weekly Contest 160解题记录</a>
         </h1>
 
         <div class="post-meta">
@@ -260,7 +260,7 @@
             </span>
 
           
-            <span id="/2019/10/27/Leetcode-Weekly-Contest-160%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode Weekly Contest 160解题记录" title="阅读次数">
+            <span id="/posts/a772a4a4/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode Weekly Contest 160解题记录" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -294,7 +294,7 @@
           <p>这次数据范围是真的小。另外因为第四题太蠢意外进了前200。。。。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/10/27/Leetcode-Weekly-Contest-160%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/#more" rel="contents">
+              <a class="btn" href="/posts/a772a4a4/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -318,7 +318,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://itachi666.github.io/2019/09/19/Hello-world-hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://itachi666.github.io/posts/4a17b156/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -332,7 +332,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/09/19/Hello-world-hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/posts/4a17b156/" class="post-title-link" itemprop="url">Hello World</a>
         </h1>
 
         <div class="post-meta">
@@ -364,7 +364,7 @@
             </span>
 
           
-            <span id="/2019/09/19/Hello-world-hello-world/" class="post-meta-item leancloud_visitors" data-flag-title="Hello World" title="阅读次数">
+            <span id="/posts/4a17b156/" class="post-meta-item leancloud_visitors" data-flag-title="Hello World" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -398,7 +398,7 @@
           <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/09/19/Hello-world-hello-world/#more" rel="contents">
+              <a class="btn" href="/posts/4a17b156/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -565,21 +565,18 @@
         .then(({ results }) => {
           if (results.length > 0) {
             var counter = results[0];
-              leancloudSelector(url).innerText = counter.time + 1;
             Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
               .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
               .catch(error => {
                 console.log('Failed to save visitor count', error);
               })
           } else {
-              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
-                .then(response => response.json())
-                .then(() => {
-                  leancloudSelector(url).innerText = 1;
-                })
-                .catch(error => {
-                  console.log('Failed to create', error);
-                });
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
           }
         })
         .catch(error => {

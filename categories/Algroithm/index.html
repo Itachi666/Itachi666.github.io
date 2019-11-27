@@ -237,7 +237,7 @@
       </div>
 
       <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/24/Leetcode-Weekly-Contest-164%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" itemprop="url">
+          <a class="post-title-link" href="/posts/67cbce32/" itemprop="url">
             <span itemprop="name">Leetcode Weekly Contest 164解题记录</span>
           </a>
       </h2>
@@ -257,7 +257,7 @@
       </div>
 
       <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/19/Kickstart-2019-Round-H%E5%8F%82%E8%B5%9B%E8%AE%B0%E5%BD%95/" itemprop="url">
+          <a class="post-title-link" href="/posts/65c9cf54/" itemprop="url">
             <span itemprop="name">Kickstart 2019 Round H参赛记录与解题思路</span>
           </a>
       </h2>
@@ -277,7 +277,7 @@
       </div>
 
       <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/19/Leetcode-Weekly-Contest-163%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" itemprop="url">
+          <a class="post-title-link" href="/posts/1ab8c86a/" itemprop="url">
             <span itemprop="name">Leetcode Weekly Contest 163解题记录</span>
           </a>
       </h2>
@@ -297,7 +297,7 @@
       </div>
 
       <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/19/Leetcode-Biweekly-Contest-13%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" itemprop="url">
+          <a class="post-title-link" href="/posts/6b80b7aa/" itemprop="url">
             <span itemprop="name">Leetcode Biweekly Contest 13解题记录</span>
           </a>
       </h2>
@@ -317,7 +317,7 @@
       </div>
 
       <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/19/%E8%B0%B7%E6%AD%8CKickstart%E9%A2%98%E7%9B%AE%E7%B4%A2%E5%BC%95%E6%95%B4%E7%90%86/" itemprop="url">
+          <a class="post-title-link" href="/posts/537758fd/" itemprop="url">
             <span itemprop="name">谷歌KickStart题目索引整理</span>
           </a>
       </h2>
@@ -337,7 +337,7 @@
       </div>
 
       <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/16/Leetcode-Weekly-Contest-162%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" itemprop="url">
+          <a class="post-title-link" href="/posts/c72e11ef/" itemprop="url">
             <span itemprop="name">Leetcode Weekly Contest 162解题记录</span>
           </a>
       </h2>
@@ -357,7 +357,7 @@
       </div>
 
       <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/03/Leetcode-Weekly-Contest-161%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" itemprop="url">
+          <a class="post-title-link" href="/posts/7ae47d21/" itemprop="url">
             <span itemprop="name">Leetcode Weekly Contest 161解题记录</span>
           </a>
       </h2>
@@ -377,7 +377,7 @@
       </div>
 
       <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/03/Leetcode-Biweekly-Contest-12%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" itemprop="url">
+          <a class="post-title-link" href="/posts/b6166e2f/" itemprop="url">
             <span itemprop="name">Leetcode Biweekly Contest 12解题记录</span>
           </a>
       </h2>
@@ -397,7 +397,7 @@
       </div>
 
       <h2 class="post-title">
-          <a class="post-title-link" href="/2019/10/27/Leetcode-Weekly-Contest-160%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" itemprop="url">
+          <a class="post-title-link" href="/posts/a772a4a4/" itemprop="url">
             <span itemprop="name">Leetcode Weekly Contest 160解题记录</span>
           </a>
       </h2>
@@ -553,21 +553,18 @@
         .then(({ results }) => {
           if (results.length > 0) {
             var counter = results[0];
-              leancloudSelector(url).innerText = counter.time + 1;
             Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
               .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
               .catch(error => {
                 console.log('Failed to save visitor count', error);
               })
           } else {
-              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
-                .then(response => response.json())
-                .then(() => {
-                  leancloudSelector(url).innerText = 1;
-                })
-                .catch(error => {
-                  console.log('Failed to create', error);
-                });
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
           }
         })
         .catch(error => {

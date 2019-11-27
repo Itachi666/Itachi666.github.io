@@ -25,7 +25,7 @@
     version: '7.5.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":15,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
+    copycode: {"enable":true,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: true,
@@ -51,16 +51,20 @@
   };
 </script>
 
-  <meta name="description" content="Let&amp;apos;s show them who we are.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="永不消失的幻想乡">
-<meta property="og:url" content="https:&#x2F;&#x2F;itachi666.github.io&#x2F;tags&#x2F;%E5%8D%9A%E5%AE%A2&#x2F;index.html">
+  <meta name="description" content="用了一星期刷了一下今年的前几轮题，虽然感受到了这些轮数之间题目难度幅度差别有点大，但大概没想到最后结果会是惨败。打完直接自闭了。。。想了想还是记录一下吧，希望明年能成功混一件衣服回来。 题解代码等这两天补上。">
+<meta name="keywords" content="Algorithm,Kickstart,Google">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kickstart 2019 Round H参赛记录与解题思路">
+<meta property="og:url" content="https:&#x2F;&#x2F;itachi666.github.io&#x2F;posts&#x2F;65c9cf54&#x2F;index.html">
 <meta property="og:site_name" content="永不消失的幻想乡">
-<meta property="og:description" content="Let&amp;apos;s show them who we are.">
+<meta property="og:description" content="用了一星期刷了一下今年的前几轮题，虽然感受到了这些轮数之间题目难度幅度差别有点大，但大概没想到最后结果会是惨败。打完直接自闭了。。。想了想还是记录一下吧，希望明年能成功混一件衣服回来。 题解代码等这两天补上。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;tvax2.sinaimg.cn&#x2F;large&#x2F;890e0d7bgy1g93oizf7o8j21520objtb.jpg">
+<meta property="og:updated_time" content="2019-11-20T06:39:30.085Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;tvax2.sinaimg.cn&#x2F;large&#x2F;890e0d7bgy1g93oizf7o8j21520objtb.jpg">
 
-<link rel="canonical" href="https://itachi666.github.io/tags/%E5%8D%9A%E5%AE%A2/">
+<link rel="canonical" href="https://itachi666.github.io/posts/65c9cf54/">
 
 
 <script id="page-configurations">
@@ -68,13 +72,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>标签: 博客 | 永不消失的幻想乡</title>
+  <title>Kickstart 2019 Round H参赛记录与解题思路 | 永不消失的幻想乡</title>
   
 
 
@@ -209,54 +213,152 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">博客
-          <small>标签</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://itachi666.github.io/posts/65c9cf54/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Papyrus">
+      <meta itemprop="description" content="Let's show them who we are.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永不消失的幻想乡">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Kickstart 2019 Round H参赛记录与解题思路
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-19 21:37:51" itemprop="dateCreated datePublished" datetime="2019-11-19T21:37:51+08:00">2019-11-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-20 14:39:30" itemprop="dateModified" datetime="2019-11-20T14:39:30+08:00">2019-11-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algroithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algroithm</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algroithm/Google/" itemprop="url" rel="index">
+                    <span itemprop="name">Google</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/65c9cf54/" class="post-meta-item leancloud_visitors" data-flag-title="Kickstart 2019 Round H参赛记录与解题思路" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>917</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+        <p>用了一星期刷了一下今年的前几轮题，虽然感受到了这些轮数之间题目难度幅度差别有点大，但大概没想到最后结果会是惨败。打完直接自闭了。。。想了想还是记录一下吧，希望明年能成功混一件衣服回来。</p>
+<p>题解代码等这两天补上。</p>
+<a id="more"></a>
+
+<p><img src="https://tvax2.sinaimg.cn/large/890e0d7bgy1g93oizf7o8j21520objtb.jpg" alt=""></p>
+<p><a href="https://codingcompetitions.withgoogle.com/kickstart/round/0000000000050edd" target="_blank" rel="noopener">比赛链接</a></p>
+<h2 id="Q1-H-index"><a href="#Q1-H-index" class="headerlink" title="Q1: H-index"></a>Q1: H-index</h2><p>题目大意：一个人发表了n篇文章，每一个文章具有一个影响因子<code>A[i]</code>，如果一个人有h篇文章的影响因子都大于等于h，则这个人的H-index就是h。根据发表的文章顺序，问每一篇文章发表后这个人的H-index都变为了多少。</p>
+<p>刚开始看见小数据集只有5分的时候就有点感觉不妙，暴力写了一个交了然后开始研究大数据集，然后卡在了怎么来维护这么一个数据范围上。显然$10^5$的数据范围肯定是要$O(log n)$级别的维护，但尝试了二分插入等方法之后还是不知所措。</p>
+<p>看过答案之后感觉其实是有暗示的，$O(log n)$级别的数据维护其实没几个，该想到用最小堆维护的。</p>
+<h2 id="Q2-Diagonal-Puzzle"><a href="#Q2-Diagonal-Puzzle" class="headerlink" title="Q2: Diagonal Puzzle"></a>Q2: Diagonal Puzzle</h2><p>题目大意：一个n*n的矩阵，每个矩阵中有一个白色棋子或黑色棋子，每一次可以选择一条斜的对角线（左右均可）来让一行棋子翻转，类似黑白棋。问最少多少次操作能够使全部棋子变黑。</p>
+<p>这题中途看了一眼通过率吓了一跳，比第三题还低。小数据集很明显是让暴力搜索的，可以分析出每一个对角线至多只会翻转一次，写了一个BFS结果一直在爆空间，调了一会之后心态就炸了。现在想想可能写个dfs更好一点。</p>
+<p>大数据集的第一个题解说实话我没怎么看懂。。但是第二个题解还是看懂了的，很巧妙的思路，将矩阵问题变成了一个二色染色图来搜索</p>
+<h2 id="Q3-Elevanagram"><a href="#Q3-Elevanagram" class="headerlink" title="Q3: Elevanagram"></a>Q3: Elevanagram</h2><p>题目大意：给若干个1-9，问这些是否能够组成一个11的倍数。11的倍数满足<br>$$<br>（奇数位的和-偶数位的和）mod \space 11=0<br>$$<br>这题大概是心态最炸的，上午刚刚做完这么一个类似的dp，下午就不记得了。用<code>dp[i][j](0&lt;=j&lt;=11)</code>表示前面<code>i</code>个数分别在模11余<code>j</code>时是否存在，然后顺次递推就可以了。</p>
+<p>至于大数据集其实可以偷鸡，如果某个数的个数大于20就把他减少至20以内，事实证明是过的去的。</p>
+<p>其实中途曾经尝试考虑过这种思路，但结果上emmm，不知道怎么就给否了，很轻易的否了。。。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-15T21:56:27+08:00"
-              content="2019-11-15">
-          11-15
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+              <a href="/tags/Kickstart/" rel="tag"># Kickstart</a>
+              <a href="/tags/Google/" rel="tag"># Google</a>
+          </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/15/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </h2>
+        
 
-    </header>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/posts/1ab8c86a/" rel="next" title="Leetcode Weekly Contest 163解题记录">
+                  <i class="fa fa-chevron-left"></i> Leetcode Weekly Contest 163解题记录
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/posts/b617895a/" rel="prev" title="Go的Function types学习">
+                  Go的Function types学习 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-    </div>
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
         </div>
           
@@ -281,6 +383,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Q1-H-index"><span class="nav-number">1.</span> <span class="nav-text">Q1: H-index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q2-Diagonal-Puzzle"><span class="nav-number">2.</span> <span class="nav-text">Q2: Diagonal Puzzle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q3-Elevanagram"><span class="nav-number">3.</span> <span class="nav-text">Q3: Elevanagram</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -296,20 +399,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -393,21 +496,18 @@
         .then(({ results }) => {
           if (results.length > 0) {
             var counter = results[0];
-              leancloudSelector(url).innerText = counter.time + 1;
             Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
               .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
               .catch(error => {
                 console.log('Failed to save visitor count', error);
               })
           } else {
-              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
-                .then(response => response.json())
-                .then(() => {
-                  leancloudSelector(url).innerText = 1;
-                })
-                .catch(error => {
-                  console.log('Failed to create', error);
-                });
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
           }
         })
         .catch(error => {
@@ -521,9 +621,74 @@
   
 
   
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: 'ee246ed74d7882f6b8a9',
+      clientSecret: '257d1d0c0f6b492a038f06fd46529c56290a79c7',
+      repo: 'Itachi666.github.io',
+      owner: 'Itachi666',
+      admin: ['Itachi666'],
+      id: '427a18d7397359b48d3ce02d2056b5da',
+        language: 'zh-CN',
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
 
 
 </body>

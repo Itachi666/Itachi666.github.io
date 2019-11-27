@@ -52,17 +52,17 @@
 </script>
 
   <meta name="description" content="翻Fabric源码的时候看到了一个type ChannelProvider func() (Channel, error)，半天没看懂是个啥，查了一下发现是go的Function types语法，于是记录一下。">
-<meta name="keywords" content="代码学习,Go">
+<meta name="keywords" content="Go,代码学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Go的Function types学习">
-<meta property="og:url" content="https:&#x2F;&#x2F;itachi666.github.io&#x2F;2019&#x2F;11&#x2F;21&#x2F;Go%E7%9A%84Function-types&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;itachi666.github.io&#x2F;posts&#x2F;b617895a&#x2F;index.html">
 <meta property="og:site_name" content="永不消失的幻想乡">
 <meta property="og:description" content="翻Fabric源码的时候看到了一个type ChannelProvider func() (Channel, error)，半天没看懂是个啥，查了一下发现是go的Function types语法，于是记录一下。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-11-21T08:38:16.663Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://itachi666.github.io/2019/11/21/Go%E7%9A%84Function-types/">
+<link rel="canonical" href="https://itachi666.github.io/posts/b617895a/">
 
 
 <script id="page-configurations">
@@ -216,7 +216,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://itachi666.github.io/2019/11/21/Go%E7%9A%84Function-types/">
+    <link itemprop="mainEntityOfPage" href="https://itachi666.github.io/posts/b617895a/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -255,7 +255,7 @@
             </span>
 
           
-            <span id="/2019/11/21/Go%E7%9A%84Function-types/" class="post-meta-item leancloud_visitors" data-flag-title="Go的Function types学习" title="阅读次数">
+            <span id="/posts/b617895a/" class="post-meta-item leancloud_visitors" data-flag-title="Go的Function types学习" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -323,15 +323,15 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A0/" rel="tag"># 代码学习</a>
               <a href="/tags/Go/" rel="tag"># Go</a>
+              <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A0/" rel="tag"># 代码学习</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/19/Kickstart-2019-Round-H%E5%8F%82%E8%B5%9B%E8%AE%B0%E5%BD%95/" rel="next" title="Kickstart 2019 Round H参赛记录与解题思路">
+                <a href="/posts/65c9cf54/" rel="next" title="Kickstart 2019 Round H参赛记录与解题思路">
                   <i class="fa fa-chevron-left"></i> Kickstart 2019 Round H参赛记录与解题思路
                 </a>
             </div>
@@ -339,7 +339,7 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/24/Leetcode-Weekly-Contest-164%E8%A7%A3%E9%A2%98%E8%AE%B0%E5%BD%95/" rel="prev" title="Leetcode Weekly Contest 164解题记录">
+                <a href="/posts/67cbce32/" rel="prev" title="Leetcode Weekly Contest 164解题记录">
                   Leetcode Weekly Contest 164解题记录 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
@@ -494,21 +494,18 @@
         .then(({ results }) => {
           if (results.length > 0) {
             var counter = results[0];
-              leancloudSelector(url).innerText = counter.time + 1;
             Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
               .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
               .catch(error => {
                 console.log('Failed to save visitor count', error);
               })
           } else {
-              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
-                .then(response => response.json())
-                .then(() => {
-                  leancloudSelector(url).innerText = 1;
-                })
-                .catch(error => {
-                  console.log('Failed to create', error);
-                });
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
           }
         })
         .catch(error => {
@@ -635,7 +632,7 @@
       repo: 'Itachi666.github.io',
       owner: 'Itachi666',
       admin: ['Itachi666'],
-      id: '4e50db8fa916c631e90ceb8c5006d250',
+      id: '596d8d8936e407998ffcf7be634037b3',
         language: 'zh-CN',
       distractionFreeMode: 'true'
     });
