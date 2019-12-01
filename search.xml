@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Leetcode Weekly Contest 165解题记录</title>
+    <url>/posts/ba5d17b7/</url>
+    <content><![CDATA[<p>事实证明罚时非常重要，多测两下比吃个罚时强多了。。题倒是不难，但三个罚时直接排名掉了100，本来能进200的，难受。</p>
+<a id="more"></a>
+
+<h3 id="1275-Find-Winner-on-a-Tic-Tac-Toe-Game"><a href="#1275-Find-Winner-on-a-Tic-Tac-Toe-Game" class="headerlink" title="1275. Find Winner on a Tic Tac Toe Game"></a>1275. Find Winner on a Tic Tac Toe Game</h3><p><a href="https://leetcode.com/contest/weekly-contest-165/problems/find-winner-on-a-tic-tac-toe-game/" target="_blank" rel="noopener">题目</a> </p>
+<p>提交次数：1/3</p>
+<p>这题刚开始一直报一个莫名其妙的报错，最后也不知道发生了啥搁那折腾了快20分钟。然后就吃俩罚时。。事实证明给的测试样例起码要测全。。</p>
+<h3 id="1276-Number-of-Burgers-with-No-Waste-of-Ingredients"><a href="#1276-Number-of-Burgers-with-No-Waste-of-Ingredients" class="headerlink" title="1276. Number of Burgers with No Waste of Ingredients"></a>1276. Number of Burgers with No Waste of Ingredients</h3><p><a href="https://leetcode.com/contest/weekly-contest-165/problems/number-of-burgers-with-no-waste-of-ingredients/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>这题实在过分了，看完发现是个二元一次方程，闹呢</p>
+<h3 id="1277-Count-Square-Submatrices-with-All-Ones"><a href="#1277-Count-Square-Submatrices-with-All-Ones" class="headerlink" title="1277. Count Square Submatrices with All Ones"></a>1277. Count Square Submatrices with All Ones</h3><p><a href="https://leetcode.com/contest/weekly-contest-165/problems/count-square-submatrices-with-all-ones/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/2</p>
+<p>比那个找矩阵的好点，<code>dp[i][j]</code>记录以这个点为右下角的最大正方形的边长，然后把所有加一块就行了。</p>
+<p>吃了个罚时，因为没有判定这个点自己是不是<code>1</code>，有点蠢</p>
+<h3 id="1278-Palindrome-Partitioning-III"><a href="#1278-Palindrome-Partitioning-III" class="headerlink" title="1278. Palindrome Partitioning III"></a>1278. Palindrome Partitioning III</h3><p><a href="https://leetcode.com/contest/weekly-contest-165/problems/palindrome-partitioning-iii/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>比较基础的dp，考虑到对一段固定的字符串来说替换成回文串次数是固定的，所以<code>dp[i][k]</code>记录前<code>i</code>个被分成了<code>k</code>段之后的最小替换次数，然后<code>j</code>遍历<code>1-i</code>来推就可以了。</p>
+]]></content>
+      <categories>
+        <category>Algroithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode Biweekly Contest 14解题记录</title>
+    <url>/posts/16f3b1f2/</url>
+    <content><![CDATA[<p>被第三题搞的头大，拖了好久结果没时间做Q4。其实讲道理第三题不难爆搜完全能过，就是自己一直不太想写爆搜结果出了好多问题。当然第四题讲道理15分钟其实够了，感觉自己二分还是不熟练每次边界都要调好久。</p>
+<a id="more"></a>
+
+<h3 id="1271-Hexspeak"><a href="#1271-Hexspeak" class="headerlink" title="1271. Hexspeak"></a>1271. Hexspeak</h3><p><a href="https://leetcode.com/contest/biweekly-contest-14/problems/hexspeak/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>真签到题，16进制转换，实在没啥说的。</p>
+<h3 id="1272-Remove-Interval"><a href="#1272-Remove-Interval" class="headerlink" title="1272. Remove Interval"></a>1272. Remove Interval</h3><p><a href="https://leetcode.com/contest/biweekly-contest-14/problems/remove-interval/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>这题也不难，跑一遍区间判断一下重合度就可以了</p>
+<h3 id="1273-Delete-Tree-Nodes"><a href="#1273-Delete-Tree-Nodes" class="headerlink" title="1273. Delete Tree Nodes"></a>1273. Delete Tree Nodes</h3><p><a href="https://leetcode.com/contest/biweekly-contest-13/problems/synonymous-sentences/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>这题看了看觉得不用构造邻接表去存孩子（然后就坑了），一开始思路是一遍遍搜索叶子节点，把不是0的叶子权重加到他父节点上。中途发现还需要记录每个节点的总孩子个数来删节点，头就有点乱写了半天才出来。然后就没想到被测试数据坑了，一直以为是第一个数据有问题结果是第二个的问题，在那查了半天也没看出来。。。</p>
+<p>事实证明测试数据过一个添一个，出错的时候还是一个个来比较好。</p>
+<h3 id="1274-Number-of-Ships-in-a-Rectangle"><a href="#1274-Number-of-Ships-in-a-Rectangle" class="headerlink" title="1274. Number of Ships in a Rectangle"></a>1274. Number of Ships in a Rectangle</h3><p><a href="https://leetcode.com/contest/biweekly-contest-14/problems/number-of-ships-in-a-rectangle/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：0/0</p>
+<p>刚开始看见什么互动问题吓了一跳就先做第三题去了，回头看看这一题真的不难，算了一下次数二分是绝对够用的，每次分成4个区域走下去就可以了，如果这个区域是false直接返回，否则直到找到那个点为止。</p>
+<p>主要还是对边界没有理清，加上被第三题搞的心态有点炸，就出现了很多边角的细节问题。到时间了之后反而冷静了下来10分钟调出来了。</p>
+]]></content>
+      <categories>
+        <category>Algroithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++: 模板类编译过程中出现“undefined reference to”问题</title>
     <url>/posts/bfee53d1/</url>
     <content><![CDATA[<p>C++在使用模版（template）类的时候，如果像通常那样将类成员函数的声明和实现分别放在<code>.h</code>和<code>.cpp</code>中，会导致在编译时会报错<code>undefined reference to</code>，找不到对应成员函数。</p>
