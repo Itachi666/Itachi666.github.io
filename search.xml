@@ -45,7 +45,11 @@
   <entry>
     <title>Hulu实习面试经历</title>
     <url>/posts/c768cc46/</url>
-    <content><![CDATA[<h2 id="一面：电话面"><a href="#一面：电话面" class="headerlink" title="一面：电话面"></a>一面：电话面</h2><h3 id="简历"><a href="#简历" class="headerlink" title="简历"></a>简历</h3><p>开场自我介绍，然后对着简历问了大概十五分钟的样子，然后开始项目轮着问。</p>
+    <content><![CDATA[<p>蹭着2系就业部的光去hulu参观了一波，本来想问问明年暑期的事的结果听hr小姐姐说现在投实习比较容易进，回来路上纠结了一会感觉好像也不损失啥就直接找师兄投了简历</p>
+<a id="more"></a>
+
+<h2 id="一面：电话面"><a href="#一面：电话面" class="headerlink" title="一面：电话面"></a>一面：电话面</h2><p>不得不说hulu效率真的很高，第二天就联系安排电面的事了</p>
+<h3 id="简历"><a href="#简历" class="headerlink" title="简历"></a>简历</h3><p>开场自我介绍，然后对着简历问了大概十五分钟的样子，然后开始项目轮着问。</p>
 <ul>
 <li>跨链部分怎么实现的，具体细节是什么，身份验证是什么样的</li>
 <li><strong>讲讲goroutine</strong></li>
@@ -68,7 +72,7 @@
 <p>这个因为时间不多了就直接给了个dp思路来算最少次数，只想到了$O(n^2)$的区间dp思路跟她说了一下，不知道有没有更好的。</p>
 <p>这个现在想了想可能有点没领会到意思，如果她是说不仅要最少次数并且还要给出一个方案的话，我这个答案明显是不太合格的。</p>
 <p>最后问我有什么问题，我就大概问了下进去会干什么以及有没有分布式相关的工作，她表示他们分布式也不是很深入的只是再用。时间基本正好卡在了1小时。</p>
-]]></content>
+<h2 id="To-Be-Continued"><a href="#To-Be-Continued" class="headerlink" title="To Be Continued"></a>To Be Continued</h2>]]></content>
       <categories>
         <category>面试</category>
       </categories>

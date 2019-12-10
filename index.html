@@ -350,7 +350,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-09 19:16:28" itemprop="dateModified" datetime="2019-12-09T19:16:28+08:00">2019-12-09</time>
+                <time title="修改时间：2019-12-10 16:24:56" itemprop="dateModified" datetime="2019-12-10T16:24:56+08:00">2019-12-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -377,7 +377,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
+              <span>1.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -396,30 +396,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="一面：电话面"><a href="#一面：电话面" class="headerlink" title="一面：电话面"></a>一面：电话面</h2><h3 id="简历"><a href="#简历" class="headerlink" title="简历"></a>简历</h3><p>开场自我介绍，然后对着简历问了大概十五分钟的样子，然后开始项目轮着问。</p>
-<ul>
-<li>跨链部分怎么实现的，具体细节是什么，身份验证是什么样的</li>
-<li><strong>讲讲goroutine</strong></li>
-<li><strong>讲讲Nginx</strong></li>
-<li>SM3怎么实现的，<strong>是怎么保证他的哈希性质的</strong></li>
-<li>Raft的共识算法是什么意思，leader机制之类的</li>
-<li>哪个项目给你的帮助最大，收获了什么</li>
-</ul>
-<p>标粗的基本是以后要补的，尤其需要重点看一些go的知识了。</p>
-<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><p>Q1：给一个形如<code>{[[{abc(d)}]a[]]()}</code>的字符串，一对括号表示一个节点，中间均为其子节点，把这样的一棵树构造出来</p>
-<p>写的时候挺慌的刚开始，没啥状态想了半天，最后干脆先硬着头写了核心部分，写的时候思路逐渐清晰了起来把剩下的写完了。感觉写的时候沟通还是太少导致面试官没太看懂我的代码，写完在跟面试官讲思路的时候还跟她重新解释了一下，中途发现了一个bug补了上去。写了大概20分钟</p>
-<p>面试完跑了跑万幸没什么bug直接就能跑通。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="comment">// &#123;[[&#123;abc(d)&#125;]a[]]()&#125;</span></span><br><span class="line"><span class="comment">// &#123;abc&#125;   [(((((]))))  dp[i][j]= min(dp[i+1][j-1]+2/0 dp[i+1][j]+1 dp[i][j-1]+1) </span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">char</span> val;</span><br><span class="line">    <span class="built_in">vector</span>&lt;TreeNode*&gt; child;</span><br><span class="line">    TreeNode(<span class="keyword">char</span> x): val(x), child(<span class="built_in">vector</span>&lt;TreeNode*&gt;()) &#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">TreeNode* <span class="title">Solution</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s==<span class="string">""</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">    TreeNode* root=<span class="keyword">new</span> TreeNode(s[<span class="number">0</span>]);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (s.length()==<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; sta;</span><br><span class="line">    <span class="comment">// sta.push(0);</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;s.length()<span class="number">-1</span>;i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (s[i]==<span class="string">'('</span> || s[i]==<span class="string">'['</span> || s[i]==<span class="string">'&#123;'</span>) &#123;</span><br><span class="line">            sta.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (s[i]==<span class="string">')'</span> || s[i]==<span class="string">']'</span> || s[i]==<span class="string">'&#125;'</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> t=sta.top();</span><br><span class="line">            sta.pop();</span><br><span class="line">            <span class="keyword">if</span> (sta.empty()) &#123;</span><br><span class="line">                root-&gt;child.push_back(Solution(s.substr(t, i-t+<span class="number">1</span>)));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (sta.empty() &amp;&amp; s[i]&lt;=<span class="string">'z'</span> &amp;&amp; s[i]&gt;=<span class="string">'a'</span>)</span><br><span class="line">            root-&gt;child.push_back(Solution(s.substr(i,<span class="number">1</span>)));</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">    TreeNode* root= Solution(s);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Q2Q3没有写代码只是说了说思路</p>
-<p>Q2：如果字符串中括号存在多余或缺失情况怎么补全</p>
-<p>这个如果只有一个括号还好说，但是3种括号实在是emmm一时间不知道怎么处理。想了一会给了一个暴力一点的思路：按种类统计栈中左括号个数，当遇到一个右括号的时候，首先查看栈中是否有能与他匹配的左括号，如果有就一直出栈直到匹配为止；没有就意味着这个右括号多余删掉他自己就行了。</p>
-<p>说完之后感觉面试官并不是很满意这个答案，表示太暴力了于是又加了一个条件：</p>
-<p>Q3：要求最少的增删次数</p>
-<p>这个因为时间不多了就直接给了个dp思路来算最少次数，只想到了$O(n^2)$的区间dp思路跟她说了一下，不知道有没有更好的。</p>
-<p>这个现在想了想可能有点没领会到意思，如果她是说不仅要最少次数并且还要给出一个方案的话，我这个答案明显是不太合格的。</p>
-<p>最后问我有什么问题，我就大概问了下进去会干什么以及有没有分布式相关的工作，她表示他们分布式也不是很深入的只是再用。时间基本正好卡在了1小时。</p>
-
+          <p>蹭着2系就业部的光去hulu参观了一波，本来想问问明年暑期的事的结果听hr小姐姐说现在投实习比较容易进，回来路上纠结了一会感觉好像也不损失啥就直接找师兄投了简历</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/c768cc46/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
