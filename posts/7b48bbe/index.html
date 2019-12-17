@@ -51,16 +51,18 @@
   };
 </script>
 
-  <meta name="description" content="Let&amp;apos;s show them who we are.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="永不消失的幻想乡">
-<meta property="og:url" content="https:&#x2F;&#x2F;itachi666.github.io&#x2F;tags&#x2F;Blog&#x2F;index.html">
+  <meta name="description" content="用的时间有点长，最后一题那么明显的bfs居然写了个dfs实在没看懂emmm，超时也是意料之中了。所幸最后盯着看了半天终于想出来个剪枝过了。">
+<meta name="keywords" content="Algorithm,C++,Leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode Weekly Contest 167解题报告">
+<meta property="og:url" content="https:&#x2F;&#x2F;itachi666.github.io&#x2F;posts&#x2F;7b48bbe&#x2F;index.html">
 <meta property="og:site_name" content="永不消失的幻想乡">
-<meta property="og:description" content="Let&amp;apos;s show them who we are.">
+<meta property="og:description" content="用的时间有点长，最后一题那么明显的bfs居然写了个dfs实在没看懂emmm，超时也是意料之中了。所幸最后盯着看了半天终于想出来个剪枝过了。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-16T03:08:31.904Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://itachi666.github.io/tags/Blog/">
+<link rel="canonical" href="https://itachi666.github.io/posts/7b48bbe/">
 
 
 <script id="page-configurations">
@@ -68,13 +70,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>标签: Blog | 永不消失的幻想乡</title>
+  <title>Leetcode Weekly Contest 167解题报告 | 永不消失的幻想乡</title>
   
 
 
@@ -209,54 +211,154 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">Blog
-          <small>标签</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://itachi666.github.io/posts/7b48bbe/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Papyrus">
+      <meta itemprop="description" content="Let's show them who we are.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永不消失的幻想乡">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Leetcode Weekly Contest 167解题报告
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-12-16 10:54:15 / 修改时间：11:08:31" itemprop="dateCreated datePublished" datetime="2019-12-16T10:54:15+08:00">2019-12-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algroithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algroithm</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/7b48bbe/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode Weekly Contest 167解题报告" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>508</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+        <p>用的时间有点长，最后一题那么明显的bfs居然写了个dfs实在没看懂emmm，超时也是意料之中了。所幸最后盯着看了半天终于想出来个剪枝过了。</p>
+<a id="more"></a>
+
+<h3 id="1290-Convert-Binary-Number-in-a-Linked-List-to-Integer"><a href="#1290-Convert-Binary-Number-in-a-Linked-List-to-Integer" class="headerlink" title="1290. Convert Binary Number in a Linked List to Integer"></a>1290. Convert Binary Number in a Linked List to Integer</h3><p><a href="https://leetcode.com/contest/weekly-contest-167/problems/convert-binary-number-in-a-linked-list-to-integer/" target="_blank" rel="noopener">题目</a> </p>
+<p>提交次数：1/1</p>
+<p>签到题，纯送</p>
+<h3 id="1291-Sequential-Digits"><a href="#1291-Sequential-Digits" class="headerlink" title="1291. Sequential Digits"></a>1291. Sequential Digits</h3><p><a href="https://leetcode.com/contest/weekly-contest-167/problems/sequential-digits/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>dfs一路往里进就行了（估计就是在这让我第四题时对dfs挥之不去），甚至连分支都没有。找完排个序完事。</p>
+<h3 id="1292-Maximum-Side-Length-of-a-Square-with-Sum-Less-than-or-Equal-to-Threshold"><a href="#1292-Maximum-Side-Length-of-a-Square-with-Sum-Less-than-or-Equal-to-Threshold" class="headerlink" title="1292. Maximum Side Length of a Square with Sum Less than or Equal to Threshold"></a>1292. Maximum Side Length of a Square with Sum Less than or Equal to Threshold</h3><p><a href="https://leetcode.com/contest/weekly-contest-167/problems/maximum-side-length-of-a-square-with-sum-less-than-or-equal-to-threshold/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>推导出了一个二维的前缀和，能求出来两点形成的矩形的值。边界没太理清耽误了一点时间，其他没什么了。</p>
+<h3 id="1293-Shortest-Path-in-a-Grid-with-Obstacles-Elimination"><a href="#1293-Shortest-Path-in-a-Grid-with-Obstacles-Elimination" class="headerlink" title="1293. Shortest Path in a Grid with Obstacles Elimination"></a>1293. Shortest Path in a Grid with Obstacles Elimination</h3><p><a href="https://leetcode.com/contest/weekly-contest-167/problems/shortest-path-in-a-grid-with-obstacles-elimination/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/2</p>
+<p>实在不知道为什么要写dfs，，还不剪枝就往上交。后来盯着想了半天还想改成dp，结果没改成方向实在有点多（现在想想可能优先按k搜能出来）。结果突然想到在每个点的时候判断一下最短路径能不能比当前答案更短，否则就返回，然后就过了emmm</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+        
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-09-19T14:13:20+08:00"
-              content="2019-09-19">
-          09-19
-        </time>
-      </div>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Papyrus
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://itachi666.github.io/posts/7b48bbe/" title="Leetcode Weekly Contest 167解题报告">https://itachi666.github.io/posts/7b48bbe/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/posts/4a17b156/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </h2>
 
-    </header>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+              <a href="/tags/C/" rel="tag"># C++</a>
+              <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/posts/16d04135/" rel="next" title="Leetcode Biweekly Contest 15解题报告">
+                  <i class="fa fa-chevron-left"></i> Leetcode Biweekly Contest 15解题报告
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-    </div>
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
         </div>
           
@@ -281,6 +383,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1290-Convert-Binary-Number-in-a-Linked-List-to-Integer"><span class="nav-number">1.</span> <span class="nav-text">1290. Convert Binary Number in a Linked List to Integer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1291-Sequential-Digits"><span class="nav-number">2.</span> <span class="nav-text">1291. Sequential Digits</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1292-Maximum-Side-Length-of-a-Square-with-Sum-Less-than-or-Equal-to-Threshold"><span class="nav-number">3.</span> <span class="nav-text">1292. Maximum Side Length of a Square with Sum Less than or Equal to Threshold</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1293-Shortest-Path-in-a-Grid-with-Obstacles-Elimination"><span class="nav-number">4.</span> <span class="nav-text">1293. Shortest Path in a Grid with Obstacles Elimination</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -526,9 +629,74 @@
   
 
   
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: 'ee246ed74d7882f6b8a9',
+      clientSecret: '257d1d0c0f6b492a038f06fd46529c56290a79c7',
+      repo: 'Itachi666.github.io',
+      owner: 'Itachi666',
+      admin: ['Itachi666'],
+      id: '3bae2d0286693229d8fd7384a82d27fc',
+        language: 'zh-CN',
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
 
 
 </body>
