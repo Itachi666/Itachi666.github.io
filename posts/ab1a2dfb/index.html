@@ -51,18 +51,18 @@
   };
 </script>
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta name="keywords" content="Blog">
+  <meta name="description" content="Q2两个罚时有点蛋疼，第四题还是dp不太熟，总想着搜。。来回改了好几次耽误了不少时间">
+<meta name="keywords" content="Algorithm,C++,Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https:&#x2F;&#x2F;itachi666.github.io&#x2F;posts&#x2F;4a17b156&#x2F;index.html">
+<meta property="og:title" content="Leetcode Biweekly Contest 16解题报告">
+<meta property="og:url" content="https:&#x2F;&#x2F;itachi666.github.io&#x2F;posts&#x2F;ab1a2dfb&#x2F;index.html">
 <meta property="og:site_name" content="永不消失的幻想乡">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="Q2两个罚时有点蛋疼，第四题还是dp不太熟，总想着搜。。来回改了好几次耽误了不少时间">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-26T22:16:36.000Z">
+<meta property="og:updated_time" content="2019-12-29T06:15:01.807Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://itachi666.github.io/posts/4a17b156/">
+<link rel="canonical" href="https://itachi666.github.io/posts/ab1a2dfb/">
 
 
 <script id="page-configurations">
@@ -76,7 +76,7 @@
   };
 </script>
 
-  <title>Hello World | 永不消失的幻想乡</title>
+  <title>Leetcode Biweekly Contest 16解题报告 | 永不消失的幻想乡</title>
   
 
 
@@ -216,7 +216,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://itachi666.github.io/posts/4a17b156/">
+    <link itemprop="mainEntityOfPage" href="https://itachi666.github.io/posts/ab1a2dfb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -229,7 +229,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          Leetcode Biweekly Contest 16解题报告
         </h1>
 
         <div class="post-meta">
@@ -238,30 +238,24 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-09-19 14:13:20" itemprop="dateCreated datePublished" datetime="2019-09-19T14:13:20+08:00">2019-09-19</time>
+              <time title="创建时间：2019-12-29 14:12:56 / 修改时间：14:15:01" itemprop="dateCreated datePublished" datetime="2019-12-29T14:12:56+08:00">2019-12-29</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-27 06:16:36" itemprop="dateModified" datetime="2019-11-27T06:16:36+08:00">2019-11-27</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
+                  <a href="/categories/Algroithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algroithm</span>
                   </a>
                 </span>
             </span>
 
           
-            <span id="/posts/4a17b156/" class="post-meta-item leancloud_visitors" data-flag-title="Hello World" title="阅读次数">
+            <span id="/posts/ab1a2dfb/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode Biweekly Contest 16解题报告" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -273,7 +267,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>357</span>
+              <span>532</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -292,21 +286,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
- <a id="more"></a> 
+        <p>Q2两个罚时有点蛋疼，第四题还是dp不太熟，总想着搜。。来回改了好几次耽误了不少时间</p>
+<a id="more"></a>
 
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h3 id="1299-Replace-Elements-with-Greatest-Element-on-Right-Side"><a href="#1299-Replace-Elements-with-Greatest-Element-on-Right-Side" class="headerlink" title="1299. Replace Elements with Greatest Element on Right Side"></a>1299. Replace Elements with Greatest Element on Right Side</h3><p><a href="https://leetcode.com/contest/biweekly-contest-16/problems/replace-elements-with-greatest-element-on-right-side/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>基本就是单调栈那个思路，开个变量存着就行了。</p>
+<h3 id="1300-Sum-of-Mutated-Array-Closest-to-Target"><a href="#1300-Sum-of-Mutated-Array-Closest-to-Target" class="headerlink" title="1300. Sum of Mutated Array Closest to Target"></a>1300. Sum of Mutated Array Closest to Target</h3><p><a href="https://leetcode.com/contest/biweekly-contest-16/problems/sum-of-mutated-array-closest-to-target/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/3</p>
+<p>一开始想写二分来着，结果二分感觉不太好处理边界就想写个$n^2$的代码赌一把，然后果断跪了2333。老老实实换回二分，对最后$l=r-1$的边界感觉很棘手一直，最后直接把在这种情况下单独判断了一下才过。</p>
+<p>看别人的代码其实可以分成$[l, m-1], m, [m+1, r]$三个区间，期间一直记录最小值就可以了，思路不太灵活。</p>
+<h3 id="1302-Deepest-Leaves-Sum"><a href="#1302-Deepest-Leaves-Sum" class="headerlink" title="1302. Deepest Leaves Sum"></a>1302. Deepest Leaves Sum</h3><p><a href="https://leetcode.com/contest/biweekly-contest-16/problems/deepest-leaves-sum/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>就是个bfs层次遍历，不说了。</p>
+<h3 id="1301-Number-of-Paths-with-Max-Score"><a href="#1301-Number-of-Paths-with-Max-Score" class="headerlink" title="1301. Number of Paths with Max Score"></a>1301. Number of Paths with Max Score</h3><p><a href="https://leetcode.com/contest/biweekly-contest-16/problems/number-of-paths-with-max-score/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>其实就是两遍dp，第一遍从右下到左上正常求最大值，第二遍从左上到右下推次数。</p>
+<p>结果从看见就想着搜。。犹豫了一会先把第一遍dp写了，然后次数又想着靠第一遍推出来的dp剪枝搜。。。冷静了一会终于想到了正解，然而时间用太多了还是没排进200。</p>
 
     </div>
 
@@ -322,7 +318,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://itachi666.github.io/posts/4a17b156/" title="Hello World">https://itachi666.github.io/posts/4a17b156/</a>
+    <a href="https://itachi666.github.io/posts/ab1a2dfb/" title="Leetcode Biweekly Contest 16解题报告">https://itachi666.github.io/posts/ab1a2dfb/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -333,21 +329,23 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Blog/" rel="tag"># Blog</a>
+              <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+              <a href="/tags/C/" rel="tag"># C++</a>
+              <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
+                <a href="/posts/fd52870e/" rel="next" title="Leetcode Weekly Contest 169解题报告">
+                  <i class="fa fa-chevron-left"></i> Leetcode Weekly Contest 169解题报告
+                </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/posts/a772a4a4/" rel="prev" title="Leetcode Weekly Contest 160解题记录">
-                  Leetcode Weekly Contest 160解题记录 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -387,7 +385,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1299-Replace-Elements-with-Greatest-Element-on-Right-Side"><span class="nav-number">1.</span> <span class="nav-text">1299. Replace Elements with Greatest Element on Right Side</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1300-Sum-of-Mutated-Array-Closest-to-Target"><span class="nav-number">2.</span> <span class="nav-text">1300. Sum of Mutated Array Closest to Target</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1302-Deepest-Leaves-Sum"><span class="nav-number">3.</span> <span class="nav-text">1302. Deepest Leaves Sum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1301-Number-of-Paths-with-Max-Score"><span class="nav-number">4.</span> <span class="nav-text">1301. Number of Paths with Max Score</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -633,6 +631,54 @@
   
 
   
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
 
   
 
@@ -646,7 +692,7 @@
       repo: 'Itachi666.github.io',
       owner: 'Itachi666',
       admin: ['Itachi666'],
-      id: '1097381bdd0b0d6c116ab01db9c7671e',
+      id: 'd7a234fee4de1775b78374a84732e50a',
         language: 'zh-CN',
       distractionFreeMode: 'true'
     });

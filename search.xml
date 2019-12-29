@@ -1,6 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Leetcode Biweekly Contest 16解题报告</title>
+    <url>/posts/ab1a2dfb/</url>
+    <content><![CDATA[<p>Q2两个罚时有点蛋疼，第四题还是dp不太熟，总想着搜。。来回改了好几次耽误了不少时间</p>
+<a id="more"></a>
+
+<h3 id="1299-Replace-Elements-with-Greatest-Element-on-Right-Side"><a href="#1299-Replace-Elements-with-Greatest-Element-on-Right-Side" class="headerlink" title="1299. Replace Elements with Greatest Element on Right Side"></a>1299. Replace Elements with Greatest Element on Right Side</h3><p><a href="https://leetcode.com/contest/biweekly-contest-16/problems/replace-elements-with-greatest-element-on-right-side/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>基本就是单调栈那个思路，开个变量存着就行了。</p>
+<h3 id="1300-Sum-of-Mutated-Array-Closest-to-Target"><a href="#1300-Sum-of-Mutated-Array-Closest-to-Target" class="headerlink" title="1300. Sum of Mutated Array Closest to Target"></a>1300. Sum of Mutated Array Closest to Target</h3><p><a href="https://leetcode.com/contest/biweekly-contest-16/problems/sum-of-mutated-array-closest-to-target/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/3</p>
+<p>一开始想写二分来着，结果二分感觉不太好处理边界就想写个$n^2$的代码赌一把，然后果断跪了2333。老老实实换回二分，对最后$l=r-1$的边界感觉很棘手一直，最后直接把在这种情况下单独判断了一下才过。</p>
+<p>看别人的代码其实可以分成$[l, m-1], m, [m+1, r]$三个区间，期间一直记录最小值就可以了，思路不太灵活。</p>
+<h3 id="1302-Deepest-Leaves-Sum"><a href="#1302-Deepest-Leaves-Sum" class="headerlink" title="1302. Deepest Leaves Sum"></a>1302. Deepest Leaves Sum</h3><p><a href="https://leetcode.com/contest/biweekly-contest-16/problems/deepest-leaves-sum/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>就是个bfs层次遍历，不说了。</p>
+<h3 id="1301-Number-of-Paths-with-Max-Score"><a href="#1301-Number-of-Paths-with-Max-Score" class="headerlink" title="1301. Number of Paths with Max Score"></a>1301. Number of Paths with Max Score</h3><p><a href="https://leetcode.com/contest/biweekly-contest-16/problems/number-of-paths-with-max-score/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>其实就是两遍dp，第一遍从右下到左上正常求最大值，第二遍从左上到右下推次数。</p>
+<p>结果从看见就想着搜。。犹豫了一会先把第一遍dp写了，然后次数又想着靠第一遍推出来的dp剪枝搜。。。冷静了一会终于想到了正解，然而时间用太多了还是没排进200。</p>
+]]></content>
+      <categories>
+        <category>Algroithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode Weekly Contest 169解题报告</title>
+    <url>/posts/fd52870e/</url>
+    <content><![CDATA[<p>翻车了。。。估计要掉分了。</p>
+<p>十来分钟就写完了前三题，结果第四题的搜索还是写炸了，来回调试了估计有1个多小时，细节上还是注意的不够</p>
+<a id="more"></a>
+
+<h3 id="5295-Find-N-Unique-Integers-Sum-up-to-Zero"><a href="#5295-Find-N-Unique-Integers-Sum-up-to-Zero" class="headerlink" title="5295. Find N Unique Integers Sum up to Zero"></a>5295. Find N Unique Integers Sum up to Zero</h3><p><a href="https://leetcode.com/contest/weekly-contest-169/problems/find-n-unique-integers-sum-up-to-zero/" target="_blank" rel="noopener">题目</a> </p>
+<p>提交次数：1/1</p>
+<p>签到题，策略太多了</p>
+<h3 id="5296-All-Elements-in-Two-Binary-Search-Trees"><a href="#5296-All-Elements-in-Two-Binary-Search-Trees" class="headerlink" title="5296. All Elements in Two Binary Search Trees"></a>5296. All Elements in Two Binary Search Trees</h3><p><a href="https://leetcode.com/contest/weekly-contest-169/problems/all-elements-in-two-binary-search-trees/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>遍历一遍两棵树然后排个序就行了</p>
+<p>当然也可以写个中序遍历然后merge，懒得写了hh</p>
+<h3 id="5297-Jump-Game-III"><a href="#5297-Jump-Game-III" class="headerlink" title="5297. Jump Game III"></a>5297. Jump Game III</h3><p><a href="https://leetcode.com/contest/weekly-contest-169/problems/jump-game-iii/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：1/1</p>
+<p>这题倒是也不难，两个分支的搜索。看讨论说用bfs更好一点，我写的dfs的话还要加个判重，倒是不复杂但是bfs确实舒服。</p>
+<h3 id="5298-Verbal-Arithmetic-Puzzle"><a href="#5298-Verbal-Arithmetic-Puzzle" class="headerlink" title="5298. Verbal Arithmetic Puzzle"></a>5298. Verbal Arithmetic Puzzle</h3><p><a href="https://leetcode.com/contest/weekly-contest-169/problems/verbal-arithmetic-puzzle/" target="_blank" rel="noopener">题目</a></p>
+<p>提交次数：0/0</p>
+<p>这题emmm，其实算一算可能性是搜的完的，以防万一考虑了一下优化，决定从个位开始往前顺次搜索，遇到没有对应值的字母就搜索进下一层，result的值是可以从前面推出来的。</p>
+<p>思路倒是好想，结果调试各种出问题，总的来说最后找出来的有三个：</p>
+<ul>
+<li>进位问题：本来只用一个int来存进位，结果如果是回溯的话这个值是没有被存下来的，结果上就导致后面的进位被算在了前面。</li>
+<li>回溯的时候没有正确清除足迹，这个算我蠢。。</li>
+<li>可能是最大的bug来源：在一些特定分支上没有在结束后return，导致有些不应该搜索的地方被执行，结果就炸了</li>
+</ul>
+<p>来回基本调了一个半小时估计，也算是提个醒吧T T。</p>
+]]></content>
+      <categories>
+        <category>Algroithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>C++</tag>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode-Weekly-Contest-168解题报告</title>
     <url>/posts/51e7d609/</url>
     <content><![CDATA[<p>运气不错两次罚时还能进前200。刚做完的时候看排名还在120的样子，然后10分钟罚时过了之后就变成190了。。。题目平均难度比前几次大了点，但第四题看着难真做下来还不如第三题感觉23333细节比较多但归根结底还是个纯模拟。</p>
