@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>算法知识点总结图谱</title>
+    <url>/posts/e66ff3c6/</url>
+    <content><![CDATA[<p>不全，如有补充感激不尽</p>
+<a id="more"></a>
+
+<p><img src="/pic/OI.svg" alt="OI"></p>
+]]></content>
+      <categories>
+        <category>Algroithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode Weekly Contest 170解题报告</title>
     <url>/posts/e7c86c90/</url>
     <content><![CDATA[<p>头天晚上通了个宵，本来觉得估计要翘掉这次了，结果没想到硬是在9点半的时候醒了怎么都睡不着，干脆爬起来打了。还好没太影响智商（还是影响了的）</p>
@@ -506,8 +521,8 @@
         <category>Go</category>
       </categories>
       <tags>
-        <tag>代码学习</tag>
         <tag>Go</tag>
+        <tag>代码学习</tag>
       </tags>
   </entry>
   <entry>
